@@ -1,0 +1,161 @@
+{
+  "summary": {
+    "total_pairs": 5,
+    "successes": 2,
+    "failures": 3,
+    "accuracy_pct": 40.0,
+    "tolerance_px": 5,
+    "mean_error_px": 119.84,
+    "median_error_px": 106.89,
+    "max_error_px": 270.95,
+    "min_error_px": 0.0,
+    "std_error_px": 111.38,
+    "mean_time_sec": 0.22,
+    "median_time_sec": 0.235,
+    "total_time_sec": 1.1,
+    "difficulty_breakdown": {
+      "easy": {
+        "total": 0,
+        "successes": 0,
+        "accuracy_pct": 0.0
+      },
+      "medium": {
+        "total": 0,
+        "successes": 0,
+        "accuracy_pct": 0.0
+      },
+      "hard": {
+        "total": 5,
+        "successes": 2,
+        "accuracy_pct": 40.0
+      }
+    }
+  },
+  "results": [
+    {
+      "pair": "pair_001",
+      "predicted_x": 512,
+      "predicted_y": 481,
+      "true_x": 512,
+      "true_y": 481,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.235,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 24228,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 4108,
+          "y": 1966,
+          "radius_x": 3,
+          "radius_y": 3
+        },
+        {
+          "type": "particle",
+          "x": 8407,
+          "y": 1349,
+          "radius_x": 4,
+          "radius_y": 4
+        }
+      ]
+    },
+    {
+      "pair": "pair_002",
+      "predicted_x": 497,
+      "predicted_y": 506,
+      "true_x": 497,
+      "true_y": 506,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.18,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 22012,
+      "defects": []
+    },
+    {
+      "pair": "pair_003",
+      "predicted_x": 641,
+      "predicted_y": 315,
+      "true_x": 515,
+      "true_y": 497,
+      "error_px": 221.36,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 221.4 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.2,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 22059,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 1432,
+          "y": 625,
+          "radius_x": 7,
+          "radius_y": 8
+        }
+      ]
+    },
+    {
+      "pair": "pair_004",
+      "predicted_x": 587,
+      "predicted_y": 553,
+      "true_x": 508,
+      "true_y": 481,
+      "error_px": 106.89,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 106.9 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.24,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 4517,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 5604,
+          "y": 7059,
+          "radius_x": 4,
+          "radius_y": 3
+        },
+        {
+          "type": "missing_contact",
+          "x": 9137,
+          "y": 6785,
+          "radius": 4
+        },
+        {
+          "type": "missing_contact",
+          "x": 8827,
+          "y": 2507,
+          "radius": 9
+        }
+      ]
+    },
+    {
+      "pair": "pair_005",
+      "predicted_x": 276,
+      "predicted_y": 310,
+      "true_x": 482,
+      "true_y": 486,
+      "error_px": 270.95,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 270.9 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.247,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 15570,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 5642,
+          "y": 9686,
+          "radius": 7
+        }
+      ]
+    }
+  ]
+}

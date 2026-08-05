@@ -1,0 +1,23 @@
+{
+  "center_x": 487,
+  "center_y": 514,
+  "ref_crop_x": 4370,
+  "ref_crop_y": 4640,
+  "ref_size": 1000,
+  "scale_factor": 10,
+  "defects": [
+    {
+      "type": "missing_contact",
+      "x": 2241,
+      "y": 2175,
+      "radius": 6
+    },
+    {
+      "type": "line_bridge",
+      "x": 6987,
+      "y": 6952,
+      "length": 25,
+      "orientation": 0
+    }
+  ]
+}

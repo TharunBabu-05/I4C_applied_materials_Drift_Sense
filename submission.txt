@@ -1,0 +1,99 @@
+Submission Requirements
+Component 1 — PPT/PDF Submission (Using i4C Idea Submission Template)
+
+Use the provided Hackathon Idea Submission Template. Fill in each slide as follows:
+
+Template Slide
+
+What to Fill In
+
+Slide 1: Team Details
+
+Team name, member names, roles, college name, contact details.
+
+Slide 2: Problem Statement Addressed
+
+Select ‘Drift-Sense: Navigation-Error Recovery.’ Describe in your own words why navigation-error recovery matters in semiconductor wafer inspection — use the Background section above as context.
+
+Slide 3: Idea Description
+
+Your key concept and approach — did you choose DRAM-style or FinFET-style architecture? What localization algorithm did you select (classical ML or deep learning)? Why is your approach better than simple template matching for periodic layouts?
+
+Slide 4: Proposed Solution
+
+Detailed solution — dataset generator design (architecture, noise models, augmentation), localization algorithm (architecture or method, key design decisions), pipeline diagram showing input pair to output (x, y). Include citations for every augmentation choice.
+
+Slide 5: Innovation & Uniqueness
+
+What makes your approach different? Is your dataset generator more realistic than the baseline? Does your localization handle periodic ambiguity better? Did you find a novel approach to the 10x scale difference problem?
+
+Slide 6: Results
+
+Accuracy rate on your own 30+ test cases: percentage of predictions within tolerance of true location. Computation time per image pair (1000 x 1000 pixels). One visual example of a SUCCESS case and one HONEST FAILURE case — where your algorithm went wrong and why. Visual: reference image, search image, your predicted location, true location.
+
+Slide 7: Technology & Feasibility
+
+Tech stack (Python libraries used), hardware used for development (CPU/GPU, cloud platform), dataset generation time, localization inference time per pair, model size if DL method used.
+
+Slide 8: GitHub & Video Link
+
+GitHub repository link (mandatory). Video link showing your algorithm running on a sample image pair (optional but recommended).
+
+Slide 9: References
+
+All citations used to justify augmentation/noise choices. Research papers, patents, or textbooks on SEM imaging, semiconductor structure, or computer vision methods used.
+
+ 
+Component 2 — GitHub Repository (Mandatory)
+
+Your GitHub repository must be public and must contain:
+
+#
+
+Repository Content
+
+Details
+
+1
+
+README.md
+
+Complete setup instructions. A reviewer must be able to clone your repo, generate a sample image pair, and run the localization algorithm from the README without contacting you.
+
+2
+
+Dataset Generator Script (standalone .py)
+
+A documented Python script that generates synthetic image pairs (Reference + Search). Must accept parameters: architecture style (DRAM/FinFET), number of pairs to generate, output directory. Must record the true center coordinates of the reference pattern in each generated pair as ground truth.
+
+3
+
+Localization Inference Script (standalone .py)
+
+A Python script that accepts: (a) path to reference image, (b) path to search image. Outputs the predicted center (x, y) of the reference pattern within the search image. Must run without manual edits. This is the script Applied Materials will run on test data.
+
+4
+
+DL Model Weights (if applicable)
+
+If you use a deep learning approach, include model weights in a downloadable format (.pt, .h5, .onnx). Must be loaded automatically by your inference script.
+
+5
+
+Training Script or Notebook (if applicable)
+
+If you train a model, include the training script or Jupyter notebook that reproduces your training process.
+
+6
+
+requirements.txt
+
+Complete pip freeze output from your development environment. Required for reproducibility.
+
+7
+
+Citation Documents / Supporting References
+
+PDF or markdown file listing all references used to justify augmentation and noise choices. Must correspond to the citations in your PPT presentation.
+
+CRITICAL — INFERENCE SCRIPT: The localization inference script is the most important file in your repository. Applied Materials will run it directly on their test image pairs to compute your Phase 2 score. It must run without manual edits, must accept a reference image path and search image path as inputs, and must output a single (x, y) coordinate. Test it on a fresh machine before submitting. An unrunnable script cannot be scored.
