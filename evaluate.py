@@ -267,7 +267,7 @@ def create_visualization(reference_path, search_path, predicted, ground_truth,
 # Main Evaluation Pipeline
 # =============================================================================
 
-def evaluate(data_dir, output_dir, tolerance=5, verbose=True):
+def evaluate(data_dir, output_dir, tolerance=5, verbose=True, use_edge=False, use_robust=False):
     """
     Run evaluation on all image pairs in data_dir.
 
@@ -281,6 +281,10 @@ def evaluate(data_dir, output_dir, tolerance=5, verbose=True):
         Pixel tolerance for "success" classification.
     verbose : bool
         Print per-pair results.
+    use_edge : bool
+        Enable edge enhancement in inference.
+    use_robust : bool
+        Enable robust preprocessing in inference.
     """
     data_dir = Path(data_dir)
     output_dir = Path(output_dir)
@@ -325,7 +329,8 @@ def evaluate(data_dir, output_dir, tolerance=5, verbose=True):
 
         # Run inference
         t_start = time.time()
-        predicted = localize(str(ref_path), str(search_path), verbose=False)
+        predicted = localize(str(ref_path), str(search_path), verbose=False, 
+                           use_edge=use_edge, use_robust=use_robust)
         t_elapsed = time.time() - t_start
 
         # Compute error
@@ -572,9 +577,14 @@ Examples:
                         help="Output directory for results (default: ./results)")
     parser.add_argument("--tolerance", type=float, default=5,
                         help="Pixel tolerance for success (default: 5)")
+    parser.add_argument("--use_edge", action="store_true",
+                        help="Enable edge enhancement in inference")
+    parser.add_argument("--use_robust", action="store_true",
+                        help="Enable robust preprocessing in inference")
 
     args = parser.parse_args()
-    evaluate(args.data_dir, args.output_dir, tolerance=args.tolerance)
+    evaluate(args.data_dir, args.output_dir, tolerance=args.tolerance,
+            use_edge=args.use_edge, use_robust=args.use_robust)
 
 
 if __name__ == "__main__":

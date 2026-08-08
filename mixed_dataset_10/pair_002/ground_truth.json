@@ -1,0 +1,11 @@
+{
+  "center_x": 463,
+  "center_y": 475,
+  "variant": "Standard-DRAM",
+  "desc": "Baseline 42-60 px pitch, moderate contrast",
+  "cell_pitch_x": 51,
+  "cell_pitch_y": 54,
+  "ref_crop_x": 4130,
+  "ref_crop_y": 4250,
+  "scale_factor": 10.0
+}

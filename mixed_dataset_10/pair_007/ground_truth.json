@@ -1,0 +1,11 @@
+{
+  "center_x": 481,
+  "center_y": 460,
+  "variant": "Low-Contrast",
+  "desc": "Muted intensities (80-110 bodies, 140-170 walls) \u2014 oxide-rich / charging",
+  "cell_pitch_x": 56,
+  "cell_pitch_y": 48,
+  "ref_crop_x": 4310,
+  "ref_crop_y": 4100,
+  "scale_factor": 10.0
+}

@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
-Drift-Sense: Localization / Inference Script  (v2.5 -- Multi-Scale NCC Pyramid)
+Drift-Sense: Localization / Inference Script  (v3.0 -- Enhanced Multi-Scale NCC Pyramid)
 ================================================================================
 
 Given a reference image (1000x1000, 100x magnification) and a search image
 (1000x1000, 10x magnification), finds the center (x, y) of the region in
 the search image where the reference pattern appears (shrunk 10x).
 
-Algorithm: Multi-Scale NCC Pyramid
-  1. Preprocess (histogram equalization + light Gaussian denoise):
+Algorithm: Enhanced Multi-Scale NCC Pyramid
+  1. Preprocess (histogram equalization + light Gaussian denoise + optional edge enhancement):
      - Reference: sigma=0.5  (light -- preserves fine 100x detail)
      - Search:    sigma=0.8  (slightly heavier -- attenuates 10x shot noise)
+     - Optional: Sobel edge magnitude blend for structural matching
   2. Build a 3-level image pyramid:
      - Level 0 (Coarse):  50px template vs 500px search  (20x total factor)
      - Level 1 (Nominal): 100px template vs 1000px search (10x factor)
@@ -20,21 +21,29 @@ Algorithm: Multi-Scale NCC Pyramid
   5. Level 2: Sub-cell refinement in tight upscaled window
   6. Center-bias disambiguation for remaining tied peaks
 
+Enhancements in v3.0:
+  - Memory efficiency: uint8/float32 for faster processing
+  - Edge enhancement: Optional Sobel edge magnitude blend
+  - Advanced filtering: Median and bilateral denoise options
+  - Better parameter handling for different architectures
+
 Why this approach:
   - Simple Gaussian preprocessing preserves structural edges NCC depends on
   - Multi-scale handling avoids cell-level periodic aliasing at coarse levels
   - NCC (TM_CCOEFF_NORMED) is illumination-invariant (handles gain/offset drift)
   - No training data or GPU required -- works on unseen test data
   - Center-bias disambiguation follows physical drift distribution reasoning
+  - Edge enhancement can improve structural matching for non-DRAM patterns
 
 References:
   [1] Lewis, "Fast Normalized Cross-Correlation," Vision Interface, 1995.
   [2] Adelson et al., "Pyramid methods in image processing," RCA Engineer, 1984.
   [3] Foroosh et al., "Extension of Phase Correlation to Subpixel Registration,"
       IEEE TIP 11(3), 2002.
+  [4] Tomasi & Manduchi, "Bilateral Filtering for Gray and Color Images," ICCV 1998.
 
 Usage:
-  python inference.py --reference path/to/reference.png --search path/to/search.png
+  python inference.py --reference path/to/reference.png --search path/to/search.png [--use_edge] [--use_robust]
 
 Output:
   Prints the predicted center (x, y) of the reference pattern in the search image.
@@ -57,9 +66,9 @@ from scipy import ndimage
 # =============================================================================
 
 def load_grayscale(path):
-    """Load an image as grayscale float64 array."""
+    """Load an image as grayscale uint8 array for memory efficiency."""
     img = Image.open(path).convert('L')
-    return np.array(img, dtype=np.float64)
+    return np.ascontiguousarray(np.array(img, dtype=np.uint8))
 
 
 def histogram_equalize(image):
@@ -67,21 +76,16 @@ def histogram_equalize(image):
     Apply contrast-limited histogram equalization.
     Normalizes intensity distribution to reduce contrast differences
     between reference and search images captured at different magnifications.
+    Returns uint8 for memory efficiency.
     """
     img_uint8 = np.clip(image, 0, 255).astype(np.uint8)
-    hist, bins = np.histogram(img_uint8.flatten(), 256, [0, 256])
-    cdf = hist.cumsum()
-    cdf_min = cdf[cdf > 0].min()
-    total = image.size
-    cdf_normalized = (cdf - cdf_min) / (total - cdf_min) * 255.0
-    cdf_normalized = np.clip(cdf_normalized, 0, 255)
-    equalized = cdf_normalized[img_uint8]
-    return equalized.astype(np.float64)
+    return cv2.equalizeHist(img_uint8)
 
 
 def light_denoise(image, sigma=1.0):
-    """Apply light Gaussian smoothing for denoising."""
-    return ndimage.gaussian_filter(image, sigma=sigma)
+    """Apply light Gaussian smoothing for denoising using OpenCV."""
+    ksize = int(round(sigma * 3)) | 1
+    return cv2.GaussianBlur(image, (ksize, ksize), sigma)
 
 
 def median_denoise(image, size=3):
@@ -96,8 +100,7 @@ def median_denoise(image, size=3):
     Reference: [1] Goldstein et al., 2018 -- SEM imaging noise types.
     """
     img_uint8 = np.clip(image, 0, 255).astype(np.uint8)
-    filtered = cv2.medianBlur(img_uint8, size)
-    return filtered.astype(np.float64)
+    return cv2.medianBlur(img_uint8, size)
 
 
 def bilateral_denoise(image, d=7, sigma_color=25, sigma_space=7):
@@ -113,15 +116,43 @@ def bilateral_denoise(image, d=7, sigma_color=25, sigma_space=7):
     Images," ICCV 1998.
     """
     img_uint8 = np.clip(image, 0, 255).astype(np.uint8)
-    filtered = cv2.bilateralFilter(img_uint8, d, sigma_color, sigma_space)
-    return filtered.astype(np.float64)
+    return cv2.bilateralFilter(img_uint8, d, sigma_color, sigma_space)
 
 
 def preprocess(image, denoise_sigma=0.8):
     """Full preprocessing pipeline: histogram equalization + gentle Gaussian denoising."""
     img = histogram_equalize(image)
-    img = light_denoise(img, sigma=denoise_sigma)
+    if denoise_sigma > 0:
+        img = light_denoise(img, sigma=denoise_sigma)
     return img
+
+
+def preprocess_with_edge(image, denoise_sigma=0.8, edge_weight=0.6):
+    """
+    Preprocessing pipeline with Sobel edge magnitude blend.
+    
+    This can improve structural matching for patterns with strong geometric features
+    like ring structures or when traditional intensity-based matching struggles.
+    
+    Parameters:
+    - denoise_sigma: Gaussian smoothing strength
+    - edge_weight: Weight for edge magnitude in the blend (0.0-1.0)
+    """
+    img = histogram_equalize(image)
+    if denoise_sigma > 0:
+        img = light_denoise(img, sigma=denoise_sigma)
+    
+    # Compute Sobel edge magnitude
+    dx = cv2.Sobel(img, cv2.CV_32F, 1, 0, ksize=3)
+    dy = cv2.Sobel(img, cv2.CV_32F, 0, 1, ksize=3)
+    edge_mag = cv2.magnitude(dx, dy)
+    max_v = edge_mag.max()
+    if max_v > 0:
+        edge_mag = (edge_mag / max_v) * 255.0
+    
+    # Blend edge magnitude with original intensity
+    blended = edge_weight * edge_mag + (1.0 - edge_weight) * img.astype(np.float32)
+    return np.clip(blended, 0, 255).astype(np.uint8)
 
 
 def preprocess_robust(image, median_size=3, bilateral_d=7, sigma_color=25,
@@ -155,6 +186,7 @@ def preprocess_robust(image, median_size=3, bilateral_d=7, sigma_color=25,
 def resize_image(image, new_size):
     """
     Resize an image using high-quality Lanczos resampling.
+    Returns float32 for memory efficiency while maintaining precision.
 
     Parameters
     ----------
@@ -167,7 +199,7 @@ def resize_image(image, new_size):
     """
     pil = Image.fromarray(np.clip(image, 0, 255).astype(np.uint8), mode='L')
     pil = pil.resize(new_size, Image.LANCZOS)
-    return np.array(pil, dtype=np.float64)
+    return np.array(pil, dtype=np.float32)
 
 
 def build_pyramid_level(reference, search, ref_target_size, search_target_size=None):
@@ -294,7 +326,7 @@ def disambiguate(candidates, image_center=(500, 500), ncc_threshold=0.05):
 # Multi-Scale NCC Pyramid (Main Pipeline)
 # =============================================================================
 
-def localize(reference_path, search_path, verbose=False):
+def localize(reference_path, search_path, verbose=False, use_edge=False, use_robust=False):
     """
     Main inference function: find the reference pattern in the search image.
 
@@ -319,6 +351,10 @@ def localize(reference_path, search_path, verbose=False):
         - Final refinement step
 
     Each level votes on the best candidate, and a weighted fusion picks the winner.
+    
+    Parameters:
+    - use_edge: Enable Sobel edge enhancement (can help with non-DRAM patterns)
+    - use_robust: Enable robust preprocessing with median/bilateral filtering
     """
     start_time = time.time()
 
@@ -328,14 +364,27 @@ def localize(reference_path, search_path, verbose=False):
     reference = load_grayscale(reference_path)
     search = load_grayscale(search_path)
 
-    # --- Preprocess (v2 proven pipeline) ---
-    # Simple histogram equalization + light Gaussian denoise.
-    # The median/bilateral pipeline in v3 over-smoothed structural edges
-    # that NCC depends on, causing a 24-point accuracy regression.
+    # --- Preprocess (v3 enhanced pipeline) ---
+    # Choose preprocessing method based on parameters
     if verbose:
         print("Preprocessing...")
-    ref_proc = preprocess(reference, denoise_sigma=0.5)
-    search_proc = preprocess(search, denoise_sigma=0.8)
+        if use_edge:
+            print("  Using edge enhancement")
+        if use_robust:
+            print("  Using robust preprocessing")
+    
+    if use_edge:
+        # Edge enhancement for structural patterns
+        ref_proc = preprocess_with_edge(reference, denoise_sigma=0.5, edge_weight=0.6)
+        search_proc = preprocess_with_edge(search, denoise_sigma=0.8, edge_weight=0.6)
+    elif use_robust:
+        # Robust preprocessing for defective images
+        ref_proc = preprocess_robust(reference, median_size=3, bilateral_d=7, gauss_sigma=0.5)
+        search_proc = preprocess_robust(search, median_size=3, bilateral_d=7, gauss_sigma=0.8)
+    else:
+        # Standard preprocessing (v2.5 proven pipeline)
+        ref_proc = preprocess(reference, denoise_sigma=0.5)
+        search_proc = preprocess(search, denoise_sigma=0.8)
 
     # =========================================================================
     # LEVEL 0: Coarse search at 2x downscaled search (20x total template scale)
@@ -490,7 +539,7 @@ def localize(reference_path, search_path, verbose=False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Drift-Sense: Multi-Scale NCC Localization (v2)",
+        description="Drift-Sense: Multi-Scale NCC Localization (v3.0 Enhanced)",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Finds the center (x, y) of the reference pattern within the search image.
@@ -498,6 +547,8 @@ Finds the center (x, y) of the reference pattern within the search image.
 Examples:
   python inference.py --reference ref.png --search search.png
   python inference.py --reference ref.png --search search.png --verbose
+  python inference.py --reference ref.png --search search.png --use_edge
+  python inference.py --reference ref.png --search search.png --use_robust
         """
     )
     parser.add_argument("--reference", type=str, required=True,
@@ -506,6 +557,10 @@ Examples:
                         help="Path to the 1000x1000 search image")
     parser.add_argument("--verbose", action="store_true",
                         help="Print detailed debug output")
+    parser.add_argument("--use_edge", action="store_true",
+                        help="Enable Sobel edge enhancement (good for non-DRAM patterns)")
+    parser.add_argument("--use_robust", action="store_true",
+                        help="Enable robust preprocessing with median/bilateral filtering")
 
     args = parser.parse_args()
 
@@ -517,7 +572,8 @@ Examples:
         print(f"ERROR: Search image not found: {args.search}")
         sys.exit(1)
 
-    x, y = localize(args.reference, args.search, verbose=args.verbose)
+    x, y = localize(args.reference, args.search, verbose=args.verbose,
+                   use_edge=args.use_edge, use_robust=args.use_robust)
     print(f"({x}, {y})")
 
 
