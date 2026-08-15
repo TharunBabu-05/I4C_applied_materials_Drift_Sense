@@ -111,17 +111,20 @@ def generate_dataset(num_pairs=10000, output_dir="./dataset", master_seed=42):
 
             # Hard-Negative periodic pitch shift injection (25% of cases)
             is_periodic_hard_neg = (i % 4 == 0)
+            
+            # Generate random base coordinates across the ENTIRE valid image area (avoiding extreme 50px edges)
+            # This ensures targets can be in top-left, bottom-right, etc.
+            base_x = int(degrade_rng.integers(100, 900))
+            base_y = int(degrade_rng.integers(100, 900))
+            
             if is_periodic_hard_neg:
+                # Add the hard negative shift to the random base coordinate
                 dx_shift = int(degrade_rng.choice([30, -30, 45, -45, 60, -60]))
                 dy_shift = int(degrade_rng.choice([43, -43, 30, -30, 52, -52]))
-                gt_x = max(200, min(800, 500 + dx_shift))
-                gt_y = max(200, min(800, 500 + dy_shift))
+                gt_x = max(100, min(900, base_x + dx_shift))
+                gt_y = max(100, min(900, base_y + dy_shift))
             else:
-                if i % 3 == 0:
-                    gt_x = int(degrade_rng.integers(350, 650))
-                    gt_y = int(degrade_rng.integers(350, 650))
-                else:
-                    gt_x, gt_y = 500, 500
+                gt_x, gt_y = base_x, base_y
 
             if render_fn is not None:
                 search_clean, target_clean = generate_clean_pair(render_fn, gt_x, gt_y, render_seed)

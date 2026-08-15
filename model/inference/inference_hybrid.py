@@ -56,17 +56,22 @@ def localize_hybrid(model, reference_path, search_path, device, verbose=False):
     ref_eq = cv2.equalizeHist(ref_img_100)
     search_eq = cv2.equalizeHist(search_img)
     
+    # Fast Gaussian Blur to suppress severe high-frequency SEM shot noise
+    # This ensures the true target actually makes it into the top-20 peaks!
+    search_eq = cv2.GaussianBlur(search_eq, (3, 3), 1.0)
+    ref_eq = cv2.GaussianBlur(ref_eq, (3, 3), 1.0)
+    
     # Fast Template Matching
     ncc_result = cv2.matchTemplate(search_eq, ref_eq, cv2.TM_CCOEFF_NORMED)
     
     # Get Top-3 candidates separated by at least 20 pixels
     # This reduces the CNN workload from 15 patches to 3, cutting CNN time by ~80%
-    top_peaks = non_max_suppression_peaks(ncc_result, min_distance=20, top_k=3)
+    top_peaks = non_max_suppression_peaks(ncc_result, min_distance=20, top_k=20)
     t_ncc_end = time.time()
     if verbose: print(f"NCC Search took {(t_ncc_end - t_ncc_start)*1000:.1f}ms")
 
     # 3. Siamese Disambiguation
-    t_cnn_start = time.time()
+    t_cnn_start = time.time()   
     # Prepare Reference Tensor
     ref_tensor = TF.to_tensor(ref_img_100).unsqueeze(0).to(device)
     
