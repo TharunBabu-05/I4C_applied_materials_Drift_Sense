@@ -1,0 +1,78 @@
+{
+    "pair_id": "dram_06",
+    "architecture": "DRAM",
+    "seed": 20260815,
+    "reference": {
+        "filename": "reference_100x.png",
+        "width_px": 1000,
+        "height_px": 1000,
+        "pixel_size_nm": 1,
+        "physical_fov_um": [
+            1.0,
+            1.0
+        ],
+        "magnification": "100x"
+    },
+    "search": {
+        "filename": "search_10x.png",
+        "width_px": 1000,
+        "height_px": 1000,
+        "pixel_size_nm": 10,
+        "physical_fov_um": [
+            10.0,
+            10.0
+        ],
+        "magnification": "10x"
+    },
+    "target": {
+        "physical_origin_nm": [
+            2940,
+            6120
+        ],
+        "search_box_xywh": [
+            294.0,
+            612.0,
+            100.0,
+            100.0
+        ],
+        "search_center_xy": [
+            344.0,
+            662.0
+        ],
+        "landmark_type": "asymmetric_contact_cluster",
+        "landmark_physical_size_nm": [
+            320,
+            300
+        ],
+        "landmark_count": 1
+    },
+    "pattern": {
+        "background": "periodic_circular_contacts",
+        "contact_pitch_nm": 135,
+        "contact_radius_nm": 29,
+        "block_size_nm": 2150,
+        "street_width_nm": 260
+    },
+    "noise_model": {
+        "poisson_shot_noise": true,
+        "detector_noise": true,
+        "low_frequency_variation": true,
+        "scan_line_variation": true,
+        "charging_like_variation": true,
+        "reference_photon_level": 900,
+        "search_photon_level": 480,
+        "reference_detector_sigma": 1.3,
+        "search_detector_sigma": 2.2
+    },
+    "generation": {
+        "same_physical_scene": true,
+        "reference_is_crop": true,
+        "search_is_area_downsampled": true,
+        "physical_scale_ratio": 10
+    },
+    "coordinate_convention": {
+        "origin": "top_left",
+        "x_direction": "right",
+        "y_direction": "down"
+    }
+}

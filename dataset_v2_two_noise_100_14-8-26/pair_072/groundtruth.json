@@ -1,0 +1,14 @@
+{
+  "center_x": 500,
+  "center_y": 335,
+  "original_gt_x": 500,
+  "original_gt_y": 335,
+  "target_name": "generate_folder_012.py",
+  "pair_id": "pair_072",
+  "scale_factor": 10.0,
+  "degradation_applied": true,
+  "degradation_models": [
+    "poisson",
+    "gaussian_blur"
+  ]
+}

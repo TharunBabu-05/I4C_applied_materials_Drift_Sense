@@ -1,0 +1,14 @@
+{
+  "center_x": 350,
+  "center_y": 630,
+  "original_gt_x": 350,
+  "original_gt_y": 630,
+  "target_name": "generate_folder_004.py",
+  "pair_id": "pair_004",
+  "scale_factor": 10.0,
+  "degradation_applied": true,
+  "degradation_models": [
+    "poisson",
+    "secondary_electron"
+  ]
+}
