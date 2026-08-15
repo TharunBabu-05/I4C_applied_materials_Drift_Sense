@@ -28,7 +28,7 @@ spec_orig.loader.exec_module(inference_orig)
 localize_original = inference_orig.localize
 
 def evaluate_folder(data_dir, tolerance=5.0):
-    checkpoint = "model/checkpoints/best_model_level1.pth"
+    checkpoint = "best_model_level2.pth"
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     print("Loading PyTorch model...")
@@ -134,5 +134,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         target_dir = sys.argv[1]
     else:
-        target_dir = "model/data/test"
+        target_dir = "model/test_senthil"
     evaluate_folder(target_dir)

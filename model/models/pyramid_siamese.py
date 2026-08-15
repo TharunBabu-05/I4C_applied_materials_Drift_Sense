@@ -1,17 +1,20 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .siamese_encoder import SiameseEncoder
+from .siamese_encoder import SiameseEncoder, MobileNetV3SiameseEncoder
 
 class PyramidSiameseNetwork(nn.Module):
     """
     Multi-Scale Siamese Network wrapper for Drift-Sense.
     Handles the 3-level pyramid architecture using a shared encoder.
     """
-    def __init__(self, embedding_dim=128):
+    def __init__(self, embedding_dim=128, encoder_type='mobilenet'):
         super(PyramidSiameseNetwork, self).__init__()
         # Shared weights encoder for all levels
-        self.encoder = SiameseEncoder(embedding_dim=embedding_dim)
+        if encoder_type == 'mobilenet':
+            self.encoder = MobileNetV3SiameseEncoder(embedding_dim=embedding_dim)
+        else:
+            self.encoder = SiameseEncoder(embedding_dim=embedding_dim)
         
         # Optional fusion head if we want to learn Level-0 and Level-1 weighting
         # Defaulting to fixed weighting if not explicitly trained

@@ -68,3 +68,46 @@ class SiameseEncoder(nn.Module):
             x = F.normalize(x, p=2, dim=1)
             
         return x
+
+import torchvision.models as models
+
+class MobileNetV3SiameseEncoder(nn.Module):
+    """
+    MobileNetV3-based shared encoder for the Siamese network.
+    Extracts a 128-D embedding from 1-channel grayscale input.
+    """
+    def __init__(self, embedding_dim=128):
+        super(MobileNetV3SiameseEncoder, self).__init__()
+        
+        # Load MobileNetV3 Small without pre-trained weights (since we use 1-channel SEM images)
+        mobilenet = models.mobilenet_v3_small(weights=None)
+        
+        # Modify the first convolutional layer to accept 1 channel instead of 3
+        original_conv = mobilenet.features[0][0]
+        mobilenet.features[0][0] = nn.Conv2d(
+            in_channels=1, 
+            out_channels=original_conv.out_channels, 
+            kernel_size=original_conv.kernel_size, 
+            stride=original_conv.stride, 
+            padding=original_conv.padding, 
+            bias=False
+        )
+        
+        self.features = mobilenet.features
+        self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
+        
+        # We need to map the output of MobileNetV3-small features (usually 576 channels) to our embedding_dim
+        self.fc = nn.Linear(576, embedding_dim)
+        
+        self.l2_norm = True
+
+    def forward(self, x):
+        x = self.features(x)
+        x = self.avgpool(x)
+        x = torch.flatten(x, 1)
+        x = self.fc(x)
+        
+        if self.l2_norm:
+            x = F.normalize(x, p=2, dim=1)
+            
+        return x

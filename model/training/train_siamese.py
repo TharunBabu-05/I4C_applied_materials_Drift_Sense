@@ -38,6 +38,7 @@ def train(args):
     os.makedirs(args.checkpoint_dir, exist_ok=True)
 
     best_val_loss = float('inf')
+    epochs_no_improve = 0
 
     # Training Loop
     for epoch in range(1, args.epochs + 1):
@@ -91,11 +92,19 @@ def train(args):
         
         scheduler.step()
         
-        # Save best model
+        # Save best model and Early Stopping logic
         if val_loss < best_val_loss:
             best_val_loss = val_loss
+            epochs_no_improve = 0
             torch.save(model.state_dict(), os.path.join(args.checkpoint_dir, f"best_model_level{args.level}.pth"))
             print("  --> Saved new best model!")
+        else:
+            epochs_no_improve += 1
+            print(f"  --> No improvement for {epochs_no_improve} epochs.")
+            
+        if epochs_no_improve >= args.patience:
+            print(f"\n[!] EARLY STOPPING TRIGGERED AT EPOCH {epoch}")
+            break
             
     print("Training Complete.")
 
@@ -107,6 +116,7 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--lr", type=float, default=1e-3)
+    parser.add_argument("--patience", type=int, default=5, help="Early stopping patience")
     args = parser.parse_args()
     
     train(args)
