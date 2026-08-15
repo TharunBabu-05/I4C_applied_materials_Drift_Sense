@@ -36,31 +36,34 @@ def evaluate_folder(data_dir, tolerance=5.0):
     model.load_state_dict(torch.load(checkpoint, map_location=device))
     model.eval()
 
-    # Collect all json ground truths across train, val, test
+    # Collect all json ground truths recursively
     gt_files = []
-    for split in ['train', 'val', 'test']:
-        split_dir = os.path.join(data_dir, split)
-        if os.path.isdir(split_dir):
-            for d in os.listdir(split_dir):
-                pair_dir = os.path.join(split_dir, d)
-                if os.path.isdir(pair_dir):
-                    gt_files.append(pair_dir)
+    if os.path.isdir(data_dir):
+        for root, dirs, files in os.walk(data_dir):
+            has_ref = any(f in files for f in ["reference.png", "target.png", "reference_100x.png"])
+            has_search = any(f in files for f in ["search.png", "search_10x.png"])
+            if has_ref and has_search:
+                gt_files.append(root)
                     
-    print(f"Total images found: {len(gt_files)}")
+    print(f"Total images found in {data_dir}: {len(gt_files)}")
     
     ncc_errors, siam_errors = [], []
     ncc_times, siam_times = [], []
 
     for i, pair_dir in enumerate(gt_files):
-        ref = os.path.join(pair_dir, "reference.png")
-        search = os.path.join(pair_dir, "search.png")
-        gt_path = os.path.join(pair_dir, "ground_truth.json")
+        # Dynamically find the exact filenames
+        files = os.listdir(pair_dir)
+        ref_name = next(f for f in files if f in ["reference.png", "target.png", "reference_100x.png"])
+        search_name = next(f for f in files if f in ["search.png", "search_10x.png"])
         
-        if not os.path.exists(gt_path):
-            # Sometimes it's groundtruth.json
-            gt_path = os.path.join(pair_dir, "groundtruth.json")
-            if not os.path.exists(gt_path):
-                continue
+        ref = os.path.join(pair_dir, ref_name)
+        search = os.path.join(pair_dir, search_name)
+        
+        # Dynamically find GT file
+        gt_name = next((f for f in files if "ground" in f.lower() or "gt" in f.lower()), None)
+        if not gt_name:
+            continue
+        gt_path = os.path.join(pair_dir, gt_name)
             
         with open(gt_path, 'r') as f:
             gt = json.load(f)
@@ -89,6 +92,10 @@ def evaluate_folder(data_dir, tolerance=5.0):
             print(f"Processed {i+1}/{len(gt_files)} images...")
 
     # Metrics Calculation
+    if len(ncc_errors) == 0:
+        print("No valid pairs found to evaluate.")
+        return
+
     ncc_hits = sum(1 for e in ncc_errors if e <= tolerance)
     ncc_misses = len(ncc_errors) - ncc_hits
     siam_hits = sum(1 for e in siam_errors if e <= tolerance)
@@ -98,7 +105,7 @@ def evaluate_folder(data_dir, tolerance=5.0):
     siam_acc = (siam_hits / len(siam_errors)) * 100
     
     print("\n=================================================================")
-    print("FINAL MACHINE LEARNING METRICS (TEST SET: 500 IMAGES)")
+    print(f"FINAL MACHINE LEARNING METRICS (TEST SET: {len(gt_files)} IMAGES)")
     print("=================================================================")
     print(f"Tolerance Threshold: {tolerance} pixels\n")
     
@@ -124,4 +131,8 @@ def evaluate_folder(data_dir, tolerance=5.0):
     print("=================================================================")
 
 if __name__ == "__main__":
-    evaluate_folder("model/data_new_test")
+    if len(sys.argv) > 1:
+        target_dir = sys.argv[1]
+    else:
+        target_dir = "model/data/test"
+    evaluate_folder(target_dir)

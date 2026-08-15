@@ -30,7 +30,7 @@ def train(args):
     model = PyramidSiameseNetwork(embedding_dim=128).to(device)
     
     # Loss & Optimizer
-    criterion = ContrastiveLoss(margin=1.0)
+    criterion = torch.nn.TripletMarginLoss(margin=1.0, p=2)
     optimizer = optim.AdamW(model.parameters(), lr=args.lr, weight_decay=1e-4)
     scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs)
 
@@ -53,16 +53,13 @@ def train(args):
             
             optimizer.zero_grad()
             
-            # Forward positive pair
-            ref_emb_pos, pos_emb = model(ref, pos)
-            loss_pos = criterion(ref_emb_pos, pos_emb, label=torch.ones(ref.size(0), 1).to(device))
+            # Forward pass: Encode all three (Anchor, Positive, Negative)
+            ref_emb = model.encoder(ref)
+            pos_emb = model.encoder(pos)
+            neg_emb = model.encoder(neg)
             
-            # Forward negative pair
-            ref_emb_neg, neg_emb = model(ref, neg)
-            loss_neg = criterion(ref_emb_neg, neg_emb, label=torch.zeros(ref.size(0), 1).to(device))
-            
-            # Total loss
-            loss = loss_pos + loss_neg
+            # Triplet Loss (pulls positive closer, pushes negative away simultaneously)
+            loss = criterion(ref_emb, pos_emb, neg_emb)
             
             loss.backward()
             optimizer.step()
@@ -81,13 +78,11 @@ def train(args):
                 pos = batch['positive'].to(device)
                 neg = batch['negative'].to(device)
                 
-                ref_emb_pos, pos_emb = model(ref, pos)
-                loss_pos = criterion(ref_emb_pos, pos_emb, label=torch.ones(ref.size(0), 1).to(device))
+                ref_emb = model.encoder(ref)
+                pos_emb = model.encoder(pos)
+                neg_emb = model.encoder(neg)
                 
-                ref_emb_neg, neg_emb = model(ref, neg)
-                loss_neg = criterion(ref_emb_neg, neg_emb, label=torch.zeros(ref.size(0), 1).to(device))
-                
-                loss = loss_pos + loss_neg
+                loss = criterion(ref_emb, pos_emb, neg_emb)
                 val_loss += loss.item() * ref.size(0)
                 
         val_loss /= len(val_loader.dataset)
