@@ -1,0 +1,72 @@
+===================================================================================
+STANDALONE SEM SYNTHETIC DATASET GENERATOR - INSTRUCTION MANUAL
+===================================================================================
+
+This package contains the complete standalone synthetic SEM image pair generator
+suite for semiconductor target pattern localization.
+
+-----------------------------------------------------------------------------------
+1. PREREQUISITES & INSTALLATION
+-----------------------------------------------------------------------------------
+Ensure Python 3.8+ is installed on your system. Open your terminal / PowerShell
+and install the required Python packages:
+
+    pip install numpy opencv-python Pillow
+
+
+-----------------------------------------------------------------------------------
+2. PACKAGE CONTENTS & FILE STRUCTURE
+-----------------------------------------------------------------------------------
+standalone_dataset_generator/
+│
+├── clean_60_scripts/           # All 60 semiconductor architecture CAD generator scripts
+├── degradation_engine.py       # 17 SEM degradation models (Poisson, Gaussian, blur, drift, tilt)
+├── noise_engine.py             # Underlying stochastic noise primitives
+├── master_generator_v2.py      # Core pattern generation & ground truth coordinate mapper
+├── generate_dataset.py         # Main CLI tool with hidden test script isolation
+└── INSTRUCTIONS.txt            # This instruction file
+
+
+-----------------------------------------------------------------------------------
+3. STRICT DATA LEAKAGE PROTECTION & HIDDEN TEST SCRIPTS
+-----------------------------------------------------------------------------------
+To ensure your deep learning models evaluate true generalization to unseen layouts:
+
+- 50 Architecture Generators  ---> Saved to `train/`  (80% of total pairs)
+- 5 Architecture Generators   ---> Saved to `val/`    (10% of total pairs)
+- 5 Architecture Generators   ---> Saved to `test/`   (10% HIDDEN TEST SET)
+
+The 5 test layout generators are completely isolated from training.
+
+
+-----------------------------------------------------------------------------------
+4. DATASET GENERATION COMMANDS
+-----------------------------------------------------------------------------------
+
+A. To Generate 10,000 Image Pairs (Recommended Full Dataset):
+-------------------------------------------------------------
+Open your terminal in the `standalone_dataset_generator` directory and run:
+
+    python generate_dataset.py --num_pairs 10000 --output_dir ./my_dataset_10k
+
+
+B. To Generate 2,500 Image Pairs (Fast Prototype Dataset):
+----------------------------------------------------------
+    python generate_dataset.py --num_pairs 2500 --output_dir ./my_dataset_2k5
+
+
+C. To Generate Custom Number of Pairs with Custom Seed:
+-------------------------------------------------------
+    python generate_dataset.py --num_pairs 5000 --output_dir ./my_dataset_5k --seed 123
+
+
+-----------------------------------------------------------------------------------
+5. KEY FEATURES & AUTOMATIC MEMORY SAFETY
+-----------------------------------------------------------------------------------
+1. Hard-Negative Periodic Replica Mining: Automatically injects periodic cell shifts 
+   (dx, dy in ±15-80 px) to train models to reject periodic false positives.
+2. Memory Safety: Automatically releases array buffers to prevent memory errors 
+   during long generation runs.
+3. Resumable Generation: If generation is interrupted, re-running the command 
+   skips already-generated pairs instantly.
+===================================================================================
