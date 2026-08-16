@@ -206,11 +206,8 @@ def train(args):
     print(f"Loss mode: {'InfoNCE (multi-negative)' if use_infonce else 'Triplet (single negative)'}")
 
     # ---------------- Model ----------------
-    # IMPORTANT: explicitly request the ResNet-style encoder. The default in
-    # PyramidSiameseNetwork is 'mobilenet' — omitting this arg silently trains
-    # a different backbone than intended.
     model = PyramidSiameseNetwork(embedding_dim=args.embedding_dim,
-                                   encoder_type="resnet").to(device)
+                                   encoder_type=args.encoder).to(device)
 
     if args.resume and os.path.exists(args.resume):
         model.load_state_dict(torch.load(args.resume, map_location=device))
@@ -290,6 +287,7 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint_dir", type=str, default="../checkpoints")
     parser.add_argument("--level", type=int, default=1)
     parser.add_argument("--embedding_dim", type=int, default=128)
+    parser.add_argument("--encoder", type=str, choices=['resnet', 'mobilenet'], default='resnet')
 
     parser.add_argument("--epochs", type=int, default=60)
     parser.add_argument("--batch_size", type=int, default=32)

@@ -1,0 +1,22 @@
+{
+  "data_dir": "model/data_15k_v2",
+  "checkpoint_dir": "model/checkpoints_mobilenet_v2_final",
+  "level": 1,
+  "embedding_dim": 128,
+  "encoder": "mobilenet",
+  "epochs": 70,
+  "batch_size": 64,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "warmup_epochs": 3,
+  "grad_clip": 5.0,
+  "patience": 10,
+  "num_workers": 4,
+  "seed": 1337,
+  "margin": 1.0,
+  "temperature": 0.1,
+  "augment": true,
+  "aug_prob": 0.7,
+  "amp": true,
+  "resume": null
+}
