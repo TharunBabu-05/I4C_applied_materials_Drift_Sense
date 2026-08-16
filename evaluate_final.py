@@ -27,12 +27,14 @@ inference_orig = importlib.util.module_from_spec(spec_orig)
 spec_orig.loader.exec_module(inference_orig)
 localize_original = inference_orig.localize
 
-def evaluate_folder(data_dir, tolerance=5.0):
-    checkpoint = "best_model_level2.pth"
+import argparse
+
+def evaluate_folder(data_dir, checkpoint, encoder_type, tolerance=5.0):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
+    print(f"\n--- Evaluating Model: {checkpoint} (Encoder: {encoder_type}) ---")
     print("Loading PyTorch model...")
-    model = PyramidSiameseNetwork().to(device)
+    model = PyramidSiameseNetwork(encoder_type=encoder_type).to(device)
     model.load_state_dict(torch.load(checkpoint, map_location=device))
     model.eval()
 
@@ -67,55 +69,71 @@ def evaluate_folder(data_dir, tolerance=5.0):
             
         with open(gt_path, 'r') as f:
             gt = json.load(f)
-            # Standalone generator format uses target.search_center_xy
-            if "target" in gt and "search_center_xy" in gt["target"]:
-                tx, ty = gt["target"]["search_center_xy"]
+            if "target_x" in gt:
+                gt_x, gt_y = gt["target_x"], gt["target_y"]
+            elif "target" in gt and "search_center_xy" in gt["target"]:
+                gt_x, gt_y = gt["target"]["search_center_xy"]
             else:
-                tx, ty = float(gt.get('center_x', 500)), float(gt.get('center_y', 500))
+                gt_x, gt_y = float(gt.get('center_x', 500)), float(gt.get('center_y', 500))
 
-        # 1. Classical Baseline
-        start = time.time()
-        nx, ny = localize_original(ref, search, verbose=False)
-        nt = time.time() - start
+        # 1. Evaluate Baseline NCC
+        start_t = time.time()
+        res_ncc = localize_original(ref, search, verbose=False)
+        ncc_times.append((time.time() - start_t) * 1000)
         
-        # 2. Hybrid Model
-        start = time.time()
-        sx, sy = localize_hybrid(model, ref, search, device, verbose=False)
-        st = time.time() - start
+        if res_ncc is not None:
+            pred_x, pred_y = res_ncc
+            err = math.sqrt((pred_x - gt_x)**2 + (pred_y - gt_y)**2)
+            ncc_errors.append(err)
+        else:
+            ncc_errors.append(float('inf'))
 
-        ncc_errors.append(math.sqrt((nx - tx)**2 + (ny - ty)**2))
-        siam_errors.append(math.sqrt((sx - tx)**2 + (sy - ty)**2))
-        ncc_times.append(nt)
-        siam_times.append(st)
+        # 2. Evaluate Hybrid Siamese
+        start_t = time.time()
+        res_siam = localize_hybrid(model, ref, search, device, verbose=False)
+        siam_times.append((time.time() - start_t) * 1000)
         
-        if (i+1) % 50 == 0:
-            print(f"Processed {i+1}/{len(gt_files)} images...")
+        if res_siam is not None:
+            pred_x, pred_y = res_siam
+            err = math.sqrt((pred_x - gt_x)**2 + (pred_y - gt_y)**2)
+            siam_errors.append(err)
+        else:
+            siam_errors.append(float('inf'))
 
-    # Metrics Calculation
     if len(ncc_errors) == 0:
         print("No valid pairs found to evaluate.")
         return
 
+    # Calculate metrics
     ncc_hits = sum(1 for e in ncc_errors if e <= tolerance)
-    ncc_misses = len(ncc_errors) - ncc_hits
     siam_hits = sum(1 for e in siam_errors if e <= tolerance)
-    siam_misses = len(siam_errors) - siam_hits
     
-    ncc_acc = (ncc_hits / len(ncc_errors)) * 100
-    siam_acc = (siam_hits / len(siam_errors)) * 100
+    total = len(ncc_errors)
+    ncc_acc = (ncc_hits / total) * 100
+    siam_acc = (siam_hits / total) * 100
     
+    # Exclude infinities for mean error calculation
+    valid_ncc_errs = [e for e in ncc_errors if e != float('inf')]
+    valid_siam_errs = [e for e in siam_errors if e != float('inf')]
+    
+    mean_ncc_err = sum(valid_ncc_errs) / len(valid_ncc_errs) if valid_ncc_errs else float('inf')
+    mean_siam_err = sum(valid_siam_errs) / len(valid_siam_errs) if valid_siam_errs else float('inf')
+    
+    avg_ncc_time = sum(ncc_times) / len(ncc_times)
+    avg_siam_time = sum(siam_times) / len(siam_times)
+
     print("\n=================================================================")
-    print(f"FINAL MACHINE LEARNING METRICS (TEST SET: {len(gt_files)} IMAGES)")
+    print(f"FINAL MACHINE LEARNING METRICS (TEST SET: {total} IMAGES)")
     print("=================================================================")
     print(f"Tolerance Threshold: {tolerance} pixels\n")
     
     print("[1] INFERENCE SPEED (Average Time per Image)")
-    print(f"    - Baseline NCC (inference.py) : {np.mean(ncc_times)*1000:.1f} ms")
-    print(f"    - Hybrid Siamese Model        : {np.mean(siam_times)*1000:.1f} ms\n")
+    print(f"    - Baseline NCC (inference.py) : {avg_ncc_time:.1f} ms")
+    print(f"    - Hybrid Siamese Model        : {avg_siam_time:.1f} ms\n")
     
     print("[2] MEAN ERROR DISTANCE")
-    print(f"    - Baseline NCC (inference.py) : {np.mean(ncc_errors):.2f} pixels")
-    print(f"    - Hybrid Siamese Model        : {np.mean(siam_errors):.2f} pixels\n")
+    print(f"    - Baseline NCC (inference.py) : {mean_ncc_err:.2f} pixels")
+    print(f"    - Hybrid Siamese Model        : {mean_siam_err:.2f} pixels\n")
     
     print("[3] LOCALIZATION ACCURACY")
     print(f"    - Baseline NCC (inference.py) : {ncc_acc:.1f}%")
@@ -124,15 +142,15 @@ def evaluate_folder(data_dir, tolerance=5.0):
     print("[4] CONFUSION MATRIX (Localization Context)")
     print("    * True Positive (Hit) = Predicted within 5px of target")
     print("    * False Negative (Miss) = Predicted outside 5px\n")
-    print("    Baseline NCC Matrix:")
-    print(f"      [ {ncc_hits:3d} Hits ]  [ {ncc_misses:3d} Misses ]")
-    print("    Hybrid Siamese Matrix:")
-    print(f"      [ {siam_hits:3d} Hits ]  [ {siam_misses:3d} Misses ]")
+    print(f"    Baseline NCC Matrix:\n      [ {ncc_hits:>3} Hits ]  [ {total - ncc_hits:>3} Misses ]")
+    print(f"    Hybrid Siamese Matrix:\n      [ {siam_hits:>3} Hits ]  [ {total - siam_hits:>3} Misses ]")
     print("=================================================================")
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        target_dir = sys.argv[1]
-    else:
-        target_dir = "model/test_senthil"
-    evaluate_folder(target_dir)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data_dir", type=str, default="model/data/test")
+    parser.add_argument("--checkpoint", type=str, required=True)
+    parser.add_argument("--encoder", type=str, choices=['resnet', 'mobilenet'], default='resnet')
+    args = parser.parse_args()
+    
+    evaluate_folder(args.data_dir, args.checkpoint, args.encoder)
