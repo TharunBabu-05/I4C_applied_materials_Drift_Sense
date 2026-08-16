@@ -15,7 +15,7 @@ def load_grayscale(path):
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     return img
 
-def non_max_suppression_peaks(scores, min_distance=10, top_k=10):
+def non_max_suppression_peaks(scores, min_distance=10, top_k=3):
     """
     Finds the Top-K peaks in a 2D score map, ensuring they are at least `min_distance` apart.
     """
@@ -66,7 +66,7 @@ def localize_hybrid(model, reference_path, search_path, device, verbose=False):
     
     # Get Top-3 candidates separated by at least 20 pixels
     # This reduces the CNN workload from 15 patches to 3, cutting CNN time by ~80%
-    top_peaks = non_max_suppression_peaks(ncc_result, min_distance=20, top_k=20)
+    top_peaks = non_max_suppression_peaks(ncc_result, min_distance=10, top_k=3)
     t_ncc_end = time.time()
     if verbose: print(f"NCC Search took {(t_ncc_end - t_ncc_start)*1000:.1f}ms")
 
