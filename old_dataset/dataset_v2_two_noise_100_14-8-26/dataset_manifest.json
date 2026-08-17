@@ -1,0 +1,2724 @@
+{
+  "num_pairs_generated": 100,
+  "total_architectures": 60,
+  "master_seed": 42,
+  "output_directory": "C:\\Users\\linga\\Downloads\\Dataset generation\\v2_stochastic_generator\\dataset_v2_two_noise_100",
+  "pairs": [
+    {
+      "pair_index": 1,
+      "pair_id": "pair_001",
+      "architecture_folder": "001",
+      "architecture_script": "generate_folder_001.py",
+      "cycle": 1,
+      "ground_truth_x": 650,
+      "ground_truth_y": 350,
+      "original_gt_x": 650,
+      "original_gt_y": 350,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "field_nonuniformity"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 5,
+          "sigma": 0.536
+        },
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.196
+        }
+      ],
+      "render_seed": 191664964,
+      "degrade_seed": 1662057958
+    },
+    {
+      "pair_index": 2,
+      "pair_id": "pair_002",
+      "architecture_folder": "002",
+      "architecture_script": "generate_folder_002.py",
+      "cycle": 1,
+      "ground_truth_x": 650,
+      "ground_truth_y": 350,
+      "original_gt_x": 650,
+      "original_gt_y": 350,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 11.454
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.045
+        }
+      ],
+      "render_seed": 1405681632,
+      "degrade_seed": 942484272
+    },
+    {
+      "pair_index": 3,
+      "pair_id": "pair_003",
+      "architecture_folder": "003",
+      "architecture_script": "generate_folder_003.py",
+      "cycle": 1,
+      "ground_truth_x": 490,
+      "ground_truth_y": 490,
+      "original_gt_x": 490,
+      "original_gt_y": 490,
+      "degradation_applied": true,
+      "degradation_models": [
+        "speckle",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "speckle",
+          "sigma": 0.025
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 9.575
+        }
+      ],
+      "render_seed": 929893138,
+      "degrade_seed": 1843824993
+    },
+    {
+      "pair_index": 4,
+      "pair_id": "pair_004",
+      "architecture_folder": "004",
+      "architecture_script": "generate_folder_004.py",
+      "cycle": 1,
+      "ground_truth_x": 350,
+      "ground_truth_y": 630,
+      "original_gt_x": 350,
+      "original_gt_y": 630,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 3.595
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 5.16
+        }
+      ],
+      "render_seed": 184566854,
+      "degrade_seed": 1497586439
+    },
+    {
+      "pair_index": 5,
+      "pair_id": "pair_005",
+      "architecture_folder": "005",
+      "architecture_script": "generate_folder_005.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "gamma"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 9.337
+        },
+        {
+          "model": "gamma",
+          "shape": 35.787
+        }
+      ],
+      "render_seed": 432652533,
+      "degrade_seed": 202244314
+    },
+    {
+      "pair_index": 6,
+      "pair_id": "pair_006",
+      "architecture_folder": "006",
+      "architecture_script": "generate_folder_006.py",
+      "cycle": 1,
+      "ground_truth_x": 300,
+      "ground_truth_y": 700,
+      "original_gt_x": 300,
+      "original_gt_y": 700,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "field_nonuniformity"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 11.483
+        },
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.126
+        }
+      ],
+      "render_seed": 1130604998,
+      "degrade_seed": 2095133046
+    },
+    {
+      "pair_index": 7,
+      "pair_id": "pair_007",
+      "architecture_folder": "007",
+      "architecture_script": "generate_folder_007.py",
+      "cycle": 1,
+      "ground_truth_x": 490,
+      "ground_truth_y": 490,
+      "original_gt_x": 490,
+      "original_gt_y": 490,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 3.99
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.021
+        }
+      ],
+      "render_seed": 1580016184,
+      "degrade_seed": 1634535063
+    },
+    {
+      "pair_index": 8,
+      "pair_id": "pair_008",
+      "architecture_folder": "008",
+      "architecture_script": "generate_folder_008.py",
+      "cycle": 1,
+      "ground_truth_x": 350,
+      "ground_truth_y": 630,
+      "original_gt_x": 350,
+      "original_gt_y": 630,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gamma",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "gamma",
+          "shape": 41.838
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.064
+        }
+      ],
+      "render_seed": 1540770720,
+      "degrade_seed": 1688060241
+    },
+    {
+      "pair_index": 9,
+      "pair_id": "pair_009",
+      "architecture_folder": "009",
+      "architecture_script": "generate_folder_009.py",
+      "cycle": 1,
+      "ground_truth_x": 460,
+      "ground_truth_y": 460,
+      "original_gt_x": 460,
+      "original_gt_y": 460,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 14.547
+        },
+        {
+          "model": "poisson",
+          "scale": 2.432
+        }
+      ],
+      "render_seed": 1102145673,
+      "degrade_seed": 275121931
+    },
+    {
+      "pair_index": 10,
+      "pair_id": "pair_010",
+      "architecture_folder": "010",
+      "architecture_script": "generate_folder_010.py",
+      "cycle": 1,
+      "ground_truth_x": 419,
+      "ground_truth_y": 579,
+      "original_gt_x": 420,
+      "original_gt_y": 580,
+      "degradation_applied": true,
+      "degradation_models": [
+        "vibration",
+        "salt_pepper"
+      ],
+      "degradation_details": [
+        {
+          "model": "vibration",
+          "dx": -1,
+          "dy": -1
+        },
+        {
+          "model": "salt_pepper",
+          "density": 0.00293
+        }
+      ],
+      "render_seed": 1803345591,
+      "degrade_seed": 967196436
+    },
+    {
+      "pair_index": 11,
+      "pair_id": "pair_011",
+      "architecture_folder": "011",
+      "architecture_script": "generate_folder_011.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "salt_pepper"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 2.501
+        },
+        {
+          "model": "salt_pepper",
+          "density": 0.00188
+        }
+      ],
+      "render_seed": 1074497556,
+      "degrade_seed": 796282693
+    },
+    {
+      "pair_index": 12,
+      "pair_id": "pair_012",
+      "architecture_folder": "012",
+      "architecture_script": "generate_folder_012.py",
+      "cycle": 1,
+      "ground_truth_x": 508,
+      "ground_truth_y": 339,
+      "original_gt_x": 500,
+      "original_gt_y": 335,
+      "degradation_applied": true,
+      "degradation_models": [
+        "projective",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "projective",
+          "max_shift": 12
+        },
+        {
+          "model": "gaussian",
+          "sigma": 4.095
+        }
+      ],
+      "render_seed": 392022359,
+      "degrade_seed": 1990212659
+    },
+    {
+      "pair_index": 13,
+      "pair_id": "pair_013",
+      "architecture_folder": "013",
+      "architecture_script": "generate_folder_013.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 690,
+      "original_gt_x": 500,
+      "original_gt_y": 690,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 1678403331,
+      "degrade_seed": 1382689816
+    },
+    {
+      "pair_index": 14,
+      "pair_id": "pair_014",
+      "architecture_folder": "014",
+      "architecture_script": "generate_folder_014.py",
+      "cycle": 1,
+      "ground_truth_x": 310,
+      "ground_truth_y": 500,
+      "original_gt_x": 310,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "motion_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 2.015
+        },
+        {
+          "model": "motion_blur",
+          "ksize": 7,
+          "angle": 71.3
+        }
+      ],
+      "render_seed": 864178267,
+      "degrade_seed": 1766867110
+    },
+    {
+      "pair_index": 15,
+      "pair_id": "pair_015",
+      "architecture_folder": "015",
+      "architecture_script": "generate_folder_015.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 405,
+      "original_gt_x": 500,
+      "original_gt_y": 405,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 3.514
+        },
+        {
+          "model": "gaussian",
+          "sigma": 4.834
+        }
+      ],
+      "render_seed": 1171300113,
+      "degrade_seed": 952224741
+    },
+    {
+      "pair_index": 16,
+      "pair_id": "pair_016",
+      "architecture_folder": "016",
+      "architecture_script": "generate_folder_016.py",
+      "cycle": 1,
+      "ground_truth_x": 310,
+      "ground_truth_y": 500,
+      "original_gt_x": 310,
+      "original_gt_y": 500,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 967354525,
+      "degrade_seed": 487991439
+    },
+    {
+      "pair_index": 17,
+      "pair_id": "pair_017",
+      "architecture_folder": "017",
+      "architecture_script": "generate_folder_017.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 0.917
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 4.513
+        }
+      ],
+      "render_seed": 197860369,
+      "degrade_seed": 1190961761
+    },
+    {
+      "pair_index": 18,
+      "pair_id": "pair_018",
+      "architecture_folder": "018",
+      "architecture_script": "generate_folder_018.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 6.124
+        },
+        {
+          "model": "poisson",
+          "scale": 2.641
+        }
+      ],
+      "render_seed": 1906728919,
+      "degrade_seed": 137046513
+    },
+    {
+      "pair_index": 19,
+      "pair_id": "pair_019",
+      "architecture_folder": "019",
+      "architecture_script": "generate_folder_019.py",
+      "cycle": 1,
+      "ground_truth_x": 488,
+      "ground_truth_y": 506,
+      "original_gt_x": 488,
+      "original_gt_y": 506,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 3.994
+        },
+        {
+          "model": "gaussian",
+          "sigma": 7.431
+        }
+      ],
+      "render_seed": 1843166519,
+      "degrade_seed": 1777324408
+    },
+    {
+      "pair_index": 20,
+      "pair_id": "pair_020",
+      "architecture_folder": "020",
+      "architecture_script": "generate_folder_020.py",
+      "cycle": 1,
+      "ground_truth_x": 488,
+      "ground_truth_y": 314,
+      "original_gt_x": 488,
+      "original_gt_y": 314,
+      "degradation_applied": true,
+      "degradation_models": [
+        "speckle",
+        "motion_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "speckle",
+          "sigma": 0.064
+        },
+        {
+          "model": "motion_blur",
+          "ksize": 7,
+          "angle": 1.9
+        }
+      ],
+      "render_seed": 594336918,
+      "degrade_seed": 1356488968
+    },
+    {
+      "pair_index": 21,
+      "pair_id": "pair_021",
+      "architecture_folder": "021",
+      "architecture_script": "generate_folder_021.py",
+      "cycle": 1,
+      "ground_truth_x": 502,
+      "ground_truth_y": 499,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "projective",
+        "barrel"
+      ],
+      "degradation_details": [
+        {
+          "model": "projective",
+          "max_shift": 7
+        },
+        {
+          "model": "barrel",
+          "k1": 0.01538
+        }
+      ],
+      "render_seed": 354826746,
+      "degrade_seed": 1627981025
+    },
+    {
+      "pair_index": 22,
+      "pair_id": "pair_022",
+      "architecture_folder": "022",
+      "architecture_script": "generate_folder_022.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "banding"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 9.353
+        },
+        {
+          "model": "banding",
+          "amplitude": 7.479
+        }
+      ],
+      "render_seed": 1504361615,
+      "degrade_seed": 761338719
+    },
+    {
+      "pair_index": 23,
+      "pair_id": "pair_023",
+      "architecture_folder": "023",
+      "architecture_script": "generate_folder_023.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gamma",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "gamma",
+          "shape": 26.162
+        },
+        {
+          "model": "poisson",
+          "scale": 1.267
+        }
+      ],
+      "render_seed": 145857092,
+      "degrade_seed": 2084558134
+    },
+    {
+      "pair_index": 24,
+      "pair_id": "pair_024",
+      "architecture_folder": "024",
+      "architecture_script": "generate_folder_024.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "field_nonuniformity",
+        "banding"
+      ],
+      "degradation_details": [
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.118
+        },
+        {
+          "model": "banding",
+          "amplitude": 8.711
+        }
+      ],
+      "render_seed": 957106590,
+      "degrade_seed": 1917963003
+    },
+    {
+      "pair_index": 25,
+      "pair_id": "pair_025",
+      "architecture_folder": "025",
+      "architecture_script": "generate_folder_025.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "low_frequency",
+        "banding"
+      ],
+      "degradation_details": [
+        {
+          "model": "low_frequency",
+          "amplitude": 15.44
+        },
+        {
+          "model": "banding",
+          "amplitude": 9.601
+        }
+      ],
+      "render_seed": 1455819992,
+      "degrade_seed": 1671565831
+    },
+    {
+      "pair_index": 26,
+      "pair_id": "pair_026",
+      "architecture_folder": "026",
+      "architecture_script": "generate_folder_026.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "low_frequency"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 5,
+          "sigma": 1.161
+        },
+        {
+          "model": "low_frequency",
+          "amplitude": 8.372
+        }
+      ],
+      "render_seed": 1631871624,
+      "degrade_seed": 417983442
+    },
+    {
+      "pair_index": 27,
+      "pair_id": "pair_027",
+      "architecture_folder": "027",
+      "architecture_script": "generate_folder_027.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "banding"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 3.831
+        },
+        {
+          "model": "banding",
+          "amplitude": 7.124
+        }
+      ],
+      "render_seed": 781482251,
+      "degrade_seed": 1002275723
+    },
+    {
+      "pair_index": 28,
+      "pair_id": "pair_028",
+      "architecture_folder": "028",
+      "architecture_script": "generate_folder_028.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gamma",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "gamma",
+          "shape": 43.533
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 6.991
+        }
+      ],
+      "render_seed": 1068999196,
+      "degrade_seed": 94067870
+    },
+    {
+      "pair_index": 29,
+      "pair_id": "pair_029",
+      "architecture_folder": "029",
+      "architecture_script": "generate_folder_029.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gamma",
+        "gaussian_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "gamma",
+          "shape": 10.947
+        },
+        {
+          "model": "gaussian_blur",
+          "ksize": 5,
+          "sigma": 0.644
+        }
+      ],
+      "render_seed": 1173749072,
+      "degrade_seed": 331334161
+    },
+    {
+      "pair_index": 30,
+      "pair_id": "pair_030",
+      "architecture_folder": "030",
+      "architecture_script": "generate_folder_030.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "field_nonuniformity"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 1.653
+        },
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.142
+        }
+      ],
+      "render_seed": 1596387605,
+      "degrade_seed": 1466836457
+    },
+    {
+      "pair_index": 31,
+      "pair_id": "pair_031",
+      "architecture_folder": "031",
+      "architecture_script": "generate_folder_031.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 499,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "rotation",
+        "projective"
+      ],
+      "degradation_details": [
+        {
+          "model": "rotation",
+          "angle_deg": 0.366
+        },
+        {
+          "model": "projective",
+          "max_shift": 4
+        }
+      ],
+      "render_seed": 1981113450,
+      "degrade_seed": 1599364551
+    },
+    {
+      "pair_index": 32,
+      "pair_id": "pair_032",
+      "architecture_folder": "032",
+      "architecture_script": "generate_folder_032.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 0.566
+        },
+        {
+          "model": "poisson",
+          "scale": 3.687
+        }
+      ],
+      "render_seed": 787359109,
+      "degrade_seed": 2077711329
+    },
+    {
+      "pair_index": 33,
+      "pair_id": "pair_033",
+      "architecture_folder": "033",
+      "architecture_script": "generate_folder_033.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "motion_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 5,
+          "sigma": 1.053
+        },
+        {
+          "model": "motion_blur",
+          "ksize": 3,
+          "angle": 29.8
+        }
+      ],
+      "render_seed": 882294417,
+      "degrade_seed": 699704628
+    },
+    {
+      "pair_index": 34,
+      "pair_id": "pair_034",
+      "architecture_folder": "034",
+      "architecture_script": "generate_folder_034.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 13.679
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 8.959
+        }
+      ],
+      "render_seed": 1944623249,
+      "degrade_seed": 795556160
+    },
+    {
+      "pair_index": 35,
+      "pair_id": "pair_035",
+      "architecture_folder": "035",
+      "architecture_script": "generate_folder_035.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "field_nonuniformity",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.085
+        },
+        {
+          "model": "gaussian",
+          "sigma": 10.493
+        }
+      ],
+      "render_seed": 163945743,
+      "degrade_seed": 1008363426
+    },
+    {
+      "pair_index": 36,
+      "pair_id": "pair_036",
+      "architecture_folder": "036",
+      "architecture_script": "generate_folder_036.py",
+      "cycle": 1,
+      "ground_truth_x": 499,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "rotation",
+        "low_frequency"
+      ],
+      "degradation_details": [
+        {
+          "model": "rotation",
+          "angle_deg": 0.311
+        },
+        {
+          "model": "low_frequency",
+          "amplitude": 5.172
+        }
+      ],
+      "render_seed": 1708709736,
+      "degrade_seed": 406886645
+    },
+    {
+      "pair_index": 37,
+      "pair_id": "pair_037",
+      "architecture_folder": "037",
+      "architecture_script": "generate_folder_037.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gamma",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "gamma",
+          "shape": 26.727
+        },
+        {
+          "model": "poisson",
+          "scale": 4.908
+        }
+      ],
+      "render_seed": 994157307,
+      "degrade_seed": 279004308
+    },
+    {
+      "pair_index": 38,
+      "pair_id": "pair_038",
+      "architecture_folder": "038",
+      "architecture_script": "generate_folder_038.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "barrel",
+        "salt_pepper"
+      ],
+      "degradation_details": [
+        {
+          "model": "barrel",
+          "k1": 0.01096
+        },
+        {
+          "model": "salt_pepper",
+          "density": 0.0034
+        }
+      ],
+      "render_seed": 1474200732,
+      "degrade_seed": 1021568550
+    },
+    {
+      "pair_index": 39,
+      "pair_id": "pair_039",
+      "architecture_folder": "039",
+      "architecture_script": "generate_folder_039.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "motion_blur",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "motion_blur",
+          "ksize": 7,
+          "angle": 85.3
+        },
+        {
+          "model": "poisson",
+          "scale": 4.331
+        }
+      ],
+      "render_seed": 709091226,
+      "degrade_seed": 487284116
+    },
+    {
+      "pair_index": 40,
+      "pair_id": "pair_040",
+      "architecture_folder": "040",
+      "architecture_script": "generate_folder_040.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 1.87
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.039
+        }
+      ],
+      "render_seed": 1212254291,
+      "degrade_seed": 1438414600
+    },
+    {
+      "pair_index": 41,
+      "pair_id": "pair_041",
+      "architecture_folder": "041",
+      "architecture_script": "generate_folder_041.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "low_frequency",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "low_frequency",
+          "amplitude": 15.778
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.02
+        }
+      ],
+      "render_seed": 2019291965,
+      "degrade_seed": 938776597
+    },
+    {
+      "pair_index": 42,
+      "pair_id": "pair_042",
+      "architecture_folder": "042",
+      "architecture_script": "generate_folder_042.py",
+      "cycle": 1,
+      "ground_truth_x": 498,
+      "ground_truth_y": 312,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "vibration",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "vibration",
+          "dx": -2,
+          "dy": 2
+        },
+        {
+          "model": "poisson",
+          "scale": 3.516
+        }
+      ],
+      "render_seed": 345075200,
+      "degrade_seed": 1788162810
+    },
+    {
+      "pair_index": 43,
+      "pair_id": "pair_043",
+      "architecture_folder": "043",
+      "architecture_script": "generate_folder_043.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 9.511
+        },
+        {
+          "model": "poisson",
+          "scale": 1.479
+        }
+      ],
+      "render_seed": 1352408539,
+      "degrade_seed": 1503807855
+    },
+    {
+      "pair_index": 44,
+      "pair_id": "pair_044",
+      "architecture_folder": "044",
+      "architecture_script": "generate_folder_044.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 2.366
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 4.196
+        }
+      ],
+      "render_seed": 208792607,
+      "degrade_seed": 670802254
+    },
+    {
+      "pair_index": 45,
+      "pair_id": "pair_045",
+      "architecture_folder": "045",
+      "architecture_script": "generate_folder_045.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 1.364
+        },
+        {
+          "model": "gaussian",
+          "sigma": 9.386
+        }
+      ],
+      "render_seed": 1648932250,
+      "degrade_seed": 1787264314
+    },
+    {
+      "pair_index": 46,
+      "pair_id": "pair_046",
+      "architecture_folder": "046",
+      "architecture_script": "generate_folder_046.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 4.524
+        },
+        {
+          "model": "gaussian",
+          "sigma": 5.764
+        }
+      ],
+      "render_seed": 934620677,
+      "degrade_seed": 1728218298
+    },
+    {
+      "pair_index": 47,
+      "pair_id": "pair_047",
+      "architecture_folder": "047",
+      "architecture_script": "generate_folder_047.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "gamma"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 1.028
+        },
+        {
+          "model": "gamma",
+          "shape": 26.683
+        }
+      ],
+      "render_seed": 1807519525,
+      "degrade_seed": 832103482
+    },
+    {
+      "pair_index": 48,
+      "pair_id": "pair_048",
+      "architecture_folder": "048",
+      "architecture_script": "generate_folder_048.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "speckle",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "speckle",
+          "sigma": 0.062
+        },
+        {
+          "model": "poisson",
+          "scale": 3.054
+        }
+      ],
+      "render_seed": 1928628491,
+      "degrade_seed": 619179888
+    },
+    {
+      "pair_index": 49,
+      "pair_id": "pair_049",
+      "architecture_folder": "049",
+      "architecture_script": "generate_folder_049.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "banding"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 9.188
+        },
+        {
+          "model": "banding",
+          "amplitude": 10.411
+        }
+      ],
+      "render_seed": 514446424,
+      "degrade_seed": 1465647934
+    },
+    {
+      "pair_index": 50,
+      "pair_id": "pair_050",
+      "architecture_folder": "050",
+      "architecture_script": "generate_folder_050.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "motion_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 5.355
+        },
+        {
+          "model": "motion_blur",
+          "ksize": 3,
+          "angle": 179.7
+        }
+      ],
+      "render_seed": 1367435608,
+      "degrade_seed": 300116173
+    },
+    {
+      "pair_index": 51,
+      "pair_id": "pair_051",
+      "architecture_folder": "051",
+      "architecture_script": "generate_folder_051.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 1788288546,
+      "degrade_seed": 429299595
+    },
+    {
+      "pair_index": 52,
+      "pair_id": "pair_052",
+      "architecture_folder": "052",
+      "architecture_script": "generate_folder_052.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "banding",
+        "gaussian_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "banding",
+          "amplitude": 3.882
+        },
+        {
+          "model": "gaussian_blur",
+          "ksize": 5,
+          "sigma": 1.128
+        }
+      ],
+      "render_seed": 1728507683,
+      "degrade_seed": 15810353
+    },
+    {
+      "pair_index": 53,
+      "pair_id": "pair_053",
+      "architecture_folder": "053",
+      "architecture_script": "generate_folder_053.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 5.327
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.044
+        }
+      ],
+      "render_seed": 1711206424,
+      "degrade_seed": 1689907232
+    },
+    {
+      "pair_index": 54,
+      "pair_id": "pair_054",
+      "architecture_folder": "054",
+      "architecture_script": "generate_folder_054.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "banding",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "banding",
+          "amplitude": 10.215
+        },
+        {
+          "model": "gaussian",
+          "sigma": 3.974
+        }
+      ],
+      "render_seed": 1675819613,
+      "degrade_seed": 1427756342
+    },
+    {
+      "pair_index": 55,
+      "pair_id": "pair_055",
+      "architecture_folder": "055",
+      "architecture_script": "generate_folder_055.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "rotation",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "rotation",
+          "angle_deg": -0.124
+        },
+        {
+          "model": "gaussian",
+          "sigma": 14.988
+        }
+      ],
+      "render_seed": 1012682731,
+      "degrade_seed": 1514331119
+    },
+    {
+      "pair_index": 56,
+      "pair_id": "pair_056",
+      "architecture_folder": "056",
+      "architecture_script": "generate_folder_056.py",
+      "cycle": 1,
+      "ground_truth_x": 504,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "rotation",
+        "gaussian_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "rotation",
+          "angle_deg": -1.299
+        },
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 1.191
+        }
+      ],
+      "render_seed": 595114158,
+      "degrade_seed": 1676602827
+    },
+    {
+      "pair_index": 57,
+      "pair_id": "pair_057",
+      "architecture_folder": "057",
+      "architecture_script": "generate_folder_057.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "banding"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 4.397
+        },
+        {
+          "model": "banding",
+          "amplitude": 9.506
+        }
+      ],
+      "render_seed": 1193242762,
+      "degrade_seed": 985514123
+    },
+    {
+      "pair_index": 58,
+      "pair_id": "pair_058",
+      "architecture_folder": "058",
+      "architecture_script": "generate_folder_058.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "gamma"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 1.693
+        },
+        {
+          "model": "gamma",
+          "shape": 32.756
+        }
+      ],
+      "render_seed": 1085781156,
+      "degrade_seed": 1221362418
+    },
+    {
+      "pair_index": 59,
+      "pair_id": "pair_059",
+      "architecture_folder": "059",
+      "architecture_script": "generate_folder_059.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "gaussian_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 14.092
+        },
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 0.512
+        }
+      ],
+      "render_seed": 80020205,
+      "degrade_seed": 300211767
+    },
+    {
+      "pair_index": 60,
+      "pair_id": "pair_060",
+      "architecture_folder": "060",
+      "architecture_script": "generate_folder_060.py",
+      "cycle": 1,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "field_nonuniformity"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 3.667
+        },
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.183
+        }
+      ],
+      "render_seed": 527166791,
+      "degrade_seed": 245951460
+    },
+    {
+      "pair_index": 61,
+      "pair_id": "pair_061",
+      "architecture_folder": "001",
+      "architecture_script": "generate_folder_001.py",
+      "cycle": 2,
+      "ground_truth_x": 650,
+      "ground_truth_y": 350,
+      "original_gt_x": 650,
+      "original_gt_y": 350,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 13.184
+        },
+        {
+          "model": "poisson",
+          "scale": 2.48
+        }
+      ],
+      "render_seed": 944062963,
+      "degrade_seed": 1435384430
+    },
+    {
+      "pair_index": 62,
+      "pair_id": "pair_062",
+      "architecture_folder": "002",
+      "architecture_script": "generate_folder_002.py",
+      "cycle": 2,
+      "ground_truth_x": 650,
+      "ground_truth_y": 350,
+      "original_gt_x": 650,
+      "original_gt_y": 350,
+      "degradation_applied": true,
+      "degradation_models": [
+        "motion_blur",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "motion_blur",
+          "ksize": 7,
+          "angle": 123.0
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.054
+        }
+      ],
+      "render_seed": 1405375275,
+      "degrade_seed": 1011671399
+    },
+    {
+      "pair_index": 63,
+      "pair_id": "pair_063",
+      "architecture_folder": "003",
+      "architecture_script": "generate_folder_003.py",
+      "cycle": 2,
+      "ground_truth_x": 490,
+      "ground_truth_y": 490,
+      "original_gt_x": 490,
+      "original_gt_y": 490,
+      "degradation_applied": true,
+      "degradation_models": [
+        "barrel",
+        "gamma"
+      ],
+      "degradation_details": [
+        {
+          "model": "barrel",
+          "k1": 0.02191
+        },
+        {
+          "model": "gamma",
+          "shape": 40.532
+        }
+      ],
+      "render_seed": 1836270334,
+      "degrade_seed": 1213835295
+    },
+    {
+      "pair_index": 64,
+      "pair_id": "pair_064",
+      "architecture_folder": "004",
+      "architecture_script": "generate_folder_004.py",
+      "cycle": 2,
+      "ground_truth_x": 350,
+      "ground_truth_y": 630,
+      "original_gt_x": 350,
+      "original_gt_y": 630,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "banding"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 9.639
+        },
+        {
+          "model": "banding",
+          "amplitude": 10.784
+        }
+      ],
+      "render_seed": 170075129,
+      "degrade_seed": 1642822537
+    },
+    {
+      "pair_index": 65,
+      "pair_id": "pair_065",
+      "architecture_folder": "005",
+      "architecture_script": "generate_folder_005.py",
+      "cycle": 2,
+      "ground_truth_x": 503,
+      "ground_truth_y": 496,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "stage_drift",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "stage_drift",
+          "dx": 3,
+          "dy": -4
+        },
+        {
+          "model": "gaussian",
+          "sigma": 8.346
+        }
+      ],
+      "render_seed": 1233945443,
+      "degrade_seed": 1363047213
+    },
+    {
+      "pair_index": 66,
+      "pair_id": "pair_066",
+      "architecture_folder": "006",
+      "architecture_script": "generate_folder_006.py",
+      "cycle": 2,
+      "ground_truth_x": 301,
+      "ground_truth_y": 698,
+      "original_gt_x": 300,
+      "original_gt_y": 700,
+      "degradation_applied": true,
+      "degradation_models": [
+        "vibration",
+        "stage_drift"
+      ],
+      "degradation_details": [
+        {
+          "model": "vibration",
+          "dx": -1,
+          "dy": 2
+        },
+        {
+          "model": "stage_drift",
+          "dx": 2,
+          "dy": -4
+        }
+      ],
+      "render_seed": 1214129971,
+      "degrade_seed": 1188802710
+    },
+    {
+      "pair_index": 67,
+      "pair_id": "pair_067",
+      "architecture_folder": "007",
+      "architecture_script": "generate_folder_007.py",
+      "cycle": 2,
+      "ground_truth_x": 490,
+      "ground_truth_y": 490,
+      "original_gt_x": 490,
+      "original_gt_y": 490,
+      "degradation_applied": true,
+      "degradation_models": [
+        "motion_blur",
+        "salt_pepper"
+      ],
+      "degradation_details": [
+        {
+          "model": "motion_blur",
+          "ksize": 7,
+          "angle": 144.4
+        },
+        {
+          "model": "salt_pepper",
+          "density": 0.00196
+        }
+      ],
+      "render_seed": 194489917,
+      "degrade_seed": 1200888233
+    },
+    {
+      "pair_index": 68,
+      "pair_id": "pair_068",
+      "architecture_folder": "008",
+      "architecture_script": "generate_folder_008.py",
+      "cycle": 2,
+      "ground_truth_x": 350,
+      "ground_truth_y": 630,
+      "original_gt_x": 350,
+      "original_gt_y": 630,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "salt_pepper"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 5,
+          "sigma": 0.785
+        },
+        {
+          "model": "salt_pepper",
+          "density": 0.00155
+        }
+      ],
+      "render_seed": 1707061845,
+      "degrade_seed": 652727865
+    },
+    {
+      "pair_index": 69,
+      "pair_id": "pair_069",
+      "architecture_folder": "009",
+      "architecture_script": "generate_folder_009.py",
+      "cycle": 2,
+      "ground_truth_x": 460,
+      "ground_truth_y": 460,
+      "original_gt_x": 460,
+      "original_gt_y": 460,
+      "degradation_applied": true,
+      "degradation_models": [
+        "pincushion",
+        "low_frequency"
+      ],
+      "degradation_details": [
+        {
+          "model": "pincushion",
+          "k1": -0.0116
+        },
+        {
+          "model": "low_frequency",
+          "amplitude": 6.563
+        }
+      ],
+      "render_seed": 1294585271,
+      "degrade_seed": 66180795
+    },
+    {
+      "pair_index": 70,
+      "pair_id": "pair_070",
+      "architecture_folder": "010",
+      "architecture_script": "generate_folder_010.py",
+      "cycle": 2,
+      "ground_truth_x": 420,
+      "ground_truth_y": 580,
+      "original_gt_x": 420,
+      "original_gt_y": 580,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 746248854,
+      "degrade_seed": 937843452
+    },
+    {
+      "pair_index": 71,
+      "pair_id": "pair_071",
+      "architecture_folder": "011",
+      "architecture_script": "generate_folder_011.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "rotation",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "rotation",
+          "angle_deg": 0.803
+        },
+        {
+          "model": "gaussian",
+          "sigma": 3.594
+        }
+      ],
+      "render_seed": 2110414631,
+      "degrade_seed": 460817075
+    },
+    {
+      "pair_index": 72,
+      "pair_id": "pair_072",
+      "architecture_folder": "012",
+      "architecture_script": "generate_folder_012.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 335,
+      "original_gt_x": 500,
+      "original_gt_y": 335,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "gaussian_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 1.477
+        },
+        {
+          "model": "gaussian_blur",
+          "ksize": 5,
+          "sigma": 1.314
+        }
+      ],
+      "render_seed": 593883019,
+      "degrade_seed": 877308582
+    },
+    {
+      "pair_index": 73,
+      "pair_id": "pair_073",
+      "architecture_folder": "013",
+      "architecture_script": "generate_folder_013.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 690,
+      "original_gt_x": 500,
+      "original_gt_y": 690,
+      "degradation_applied": true,
+      "degradation_models": [
+        "motion_blur",
+        "gaussian_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "motion_blur",
+          "ksize": 5,
+          "angle": 39.5
+        },
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 1.018
+        }
+      ],
+      "render_seed": 2131733184,
+      "degrade_seed": 1832669144
+    },
+    {
+      "pair_index": 74,
+      "pair_id": "pair_074",
+      "architecture_folder": "014",
+      "architecture_script": "generate_folder_014.py",
+      "cycle": 2,
+      "ground_truth_x": 310,
+      "ground_truth_y": 500,
+      "original_gt_x": 310,
+      "original_gt_y": 500,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 74502574,
+      "degrade_seed": 502381220
+    },
+    {
+      "pair_index": 75,
+      "pair_id": "pair_075",
+      "architecture_folder": "015",
+      "architecture_script": "generate_folder_015.py",
+      "cycle": 2,
+      "ground_truth_x": 501,
+      "ground_truth_y": 405,
+      "original_gt_x": 500,
+      "original_gt_y": 405,
+      "degradation_applied": true,
+      "degradation_models": [
+        "vibration",
+        "gamma"
+      ],
+      "degradation_details": [
+        {
+          "model": "vibration",
+          "dx": 1,
+          "dy": 0
+        },
+        {
+          "model": "gamma",
+          "shape": 19.253
+        }
+      ],
+      "render_seed": 1764532445,
+      "degrade_seed": 125204184
+    },
+    {
+      "pair_index": 76,
+      "pair_id": "pair_076",
+      "architecture_folder": "016",
+      "architecture_script": "generate_folder_016.py",
+      "cycle": 2,
+      "ground_truth_x": 310,
+      "ground_truth_y": 500,
+      "original_gt_x": 310,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 3.548
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 11.675
+        }
+      ],
+      "render_seed": 1837539165,
+      "degrade_seed": 604267306
+    },
+    {
+      "pair_index": 77,
+      "pair_id": "pair_077",
+      "architecture_folder": "017",
+      "architecture_script": "generate_folder_017.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "speckle"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 2.073
+        },
+        {
+          "model": "speckle",
+          "sigma": 0.055
+        }
+      ],
+      "render_seed": 1970642946,
+      "degrade_seed": 630487793
+    },
+    {
+      "pair_index": 78,
+      "pair_id": "pair_078",
+      "architecture_folder": "018",
+      "architecture_script": "generate_folder_018.py",
+      "cycle": 2,
+      "ground_truth_x": 505,
+      "ground_truth_y": 501,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "stage_drift",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "stage_drift",
+          "dx": 5,
+          "dy": 1
+        },
+        {
+          "model": "gaussian",
+          "sigma": 6.536
+        }
+      ],
+      "render_seed": 932688238,
+      "degrade_seed": 1421454891
+    },
+    {
+      "pair_index": 79,
+      "pair_id": "pair_079",
+      "architecture_folder": "019",
+      "architecture_script": "generate_folder_019.py",
+      "cycle": 2,
+      "ground_truth_x": 488,
+      "ground_truth_y": 506,
+      "original_gt_x": 488,
+      "original_gt_y": 506,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "field_nonuniformity"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 4.689
+        },
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.063
+        }
+      ],
+      "render_seed": 271185814,
+      "degrade_seed": 1196217438
+    },
+    {
+      "pair_index": 80,
+      "pair_id": "pair_080",
+      "architecture_folder": "020",
+      "architecture_script": "generate_folder_020.py",
+      "cycle": 2,
+      "ground_truth_x": 488,
+      "ground_truth_y": 314,
+      "original_gt_x": 488,
+      "original_gt_y": 314,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "gamma"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 11.076
+        },
+        {
+          "model": "gamma",
+          "shape": 20.373
+        }
+      ],
+      "render_seed": 1084512518,
+      "degrade_seed": 1683408585
+    },
+    {
+      "pair_index": 81,
+      "pair_id": "pair_081",
+      "architecture_folder": "021",
+      "architecture_script": "generate_folder_021.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "motion_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 0.51
+        },
+        {
+          "model": "motion_blur",
+          "ksize": 7,
+          "angle": 58.4
+        }
+      ],
+      "render_seed": 2139123294,
+      "degrade_seed": 1426602464
+    },
+    {
+      "pair_index": 82,
+      "pair_id": "pair_082",
+      "architecture_folder": "022",
+      "architecture_script": "generate_folder_022.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 878721193,
+      "degrade_seed": 872709139
+    },
+    {
+      "pair_index": 83,
+      "pair_id": "pair_083",
+      "architecture_folder": "023",
+      "architecture_script": "generate_folder_023.py",
+      "cycle": 2,
+      "ground_truth_x": 499,
+      "ground_truth_y": 499,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "stage_drift",
+        "gaussian"
+      ],
+      "degradation_details": [
+        {
+          "model": "stage_drift",
+          "dx": -1,
+          "dy": -1
+        },
+        {
+          "model": "gaussian",
+          "sigma": 12.533
+        }
+      ],
+      "render_seed": 897559571,
+      "degrade_seed": 1748095465
+    },
+    {
+      "pair_index": 84,
+      "pair_id": "pair_084",
+      "architecture_folder": "024",
+      "architecture_script": "generate_folder_024.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "low_frequency"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 3.742
+        },
+        {
+          "model": "low_frequency",
+          "amplitude": 19.507
+        }
+      ],
+      "render_seed": 689805533,
+      "degrade_seed": 358571615
+    },
+    {
+      "pair_index": 85,
+      "pair_id": "pair_085",
+      "architecture_folder": "025",
+      "architecture_script": "generate_folder_025.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 717885406,
+      "degrade_seed": 48773805
+    },
+    {
+      "pair_index": 86,
+      "pair_id": "pair_086",
+      "architecture_folder": "026",
+      "architecture_script": "generate_folder_026.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "salt_pepper"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 9.906
+        },
+        {
+          "model": "salt_pepper",
+          "density": 0.00063
+        }
+      ],
+      "render_seed": 227939461,
+      "degrade_seed": 193376308
+    },
+    {
+      "pair_index": 87,
+      "pair_id": "pair_087",
+      "architecture_folder": "027",
+      "architecture_script": "generate_folder_027.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 5.808
+        },
+        {
+          "model": "poisson",
+          "scale": 4.159
+        }
+      ],
+      "render_seed": 1656896192,
+      "degrade_seed": 1551254893
+    },
+    {
+      "pair_index": 88,
+      "pair_id": "pair_088",
+      "architecture_folder": "028",
+      "architecture_script": "generate_folder_028.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gamma",
+        "field_nonuniformity"
+      ],
+      "degradation_details": [
+        {
+          "model": "gamma",
+          "shape": 40.466
+        },
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.165
+        }
+      ],
+      "render_seed": 1496303882,
+      "degrade_seed": 991873799
+    },
+    {
+      "pair_index": 89,
+      "pair_id": "pair_089",
+      "architecture_folder": "029",
+      "architecture_script": "generate_folder_029.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "field_nonuniformity"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 9.332
+        },
+        {
+          "model": "field_nonuniformity",
+          "strength": 0.118
+        }
+      ],
+      "render_seed": 1539871430,
+      "degrade_seed": 346328508
+    },
+    {
+      "pair_index": 90,
+      "pair_id": "pair_090",
+      "architecture_folder": "030",
+      "architecture_script": "generate_folder_030.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian",
+        "low_frequency"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian",
+          "sigma": 6.911
+        },
+        {
+          "model": "low_frequency",
+          "amplitude": 18.41
+        }
+      ],
+      "render_seed": 1934070333,
+      "degrade_seed": 1075985461
+    },
+    {
+      "pair_index": 91,
+      "pair_id": "pair_091",
+      "architecture_folder": "031",
+      "architecture_script": "generate_folder_031.py",
+      "cycle": 2,
+      "ground_truth_x": 502,
+      "ground_truth_y": 498,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "projective",
+        "vibration"
+      ],
+      "degradation_details": [
+        {
+          "model": "projective",
+          "max_shift": 5
+        },
+        {
+          "model": "vibration",
+          "dx": 1,
+          "dy": 1
+        }
+      ],
+      "render_seed": 2014450024,
+      "degrade_seed": 327087749
+    },
+    {
+      "pair_index": 92,
+      "pair_id": "pair_092",
+      "architecture_folder": "032",
+      "architecture_script": "generate_folder_032.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "banding",
+        "gaussian_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "banding",
+          "amplitude": 7.488
+        },
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 0.872
+        }
+      ],
+      "render_seed": 1068008206,
+      "degrade_seed": 1495336619
+    },
+    {
+      "pair_index": 93,
+      "pair_id": "pair_093",
+      "architecture_folder": "033",
+      "architecture_script": "generate_folder_033.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "gaussian_blur",
+        "motion_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "gaussian_blur",
+          "ksize": 3,
+          "sigma": 0.556
+        },
+        {
+          "model": "motion_blur",
+          "ksize": 7,
+          "angle": 89.1
+        }
+      ],
+      "render_seed": 1064348453,
+      "degrade_seed": 958113306
+    },
+    {
+      "pair_index": 94,
+      "pair_id": "pair_094",
+      "architecture_folder": "034",
+      "architecture_script": "generate_folder_034.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 311,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "pincushion",
+        "motion_blur"
+      ],
+      "degradation_details": [
+        {
+          "model": "pincushion",
+          "k1": -0.02277
+        },
+        {
+          "model": "motion_blur",
+          "ksize": 5,
+          "angle": 1.7
+        }
+      ],
+      "render_seed": 356942049,
+      "degrade_seed": 818236852
+    },
+    {
+      "pair_index": 95,
+      "pair_id": "pair_095",
+      "architecture_folder": "035",
+      "architecture_script": "generate_folder_035.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 512746651,
+      "degrade_seed": 647492281
+    },
+    {
+      "pair_index": 96,
+      "pair_id": "pair_096",
+      "architecture_folder": "036",
+      "architecture_script": "generate_folder_036.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "secondary_electron",
+        "gamma"
+      ],
+      "degradation_details": [
+        {
+          "model": "secondary_electron",
+          "sigma": 9.782
+        },
+        {
+          "model": "gamma",
+          "shape": 44.31
+        }
+      ],
+      "render_seed": 1468235992,
+      "degrade_seed": 1353521562
+    },
+    {
+      "pair_index": 97,
+      "pair_id": "pair_097",
+      "architecture_folder": "037",
+      "architecture_script": "generate_folder_037.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": true,
+      "degradation_models": [
+        "poisson",
+        "secondary_electron"
+      ],
+      "degradation_details": [
+        {
+          "model": "poisson",
+          "scale": 3.892
+        },
+        {
+          "model": "secondary_electron",
+          "sigma": 7.782
+        }
+      ],
+      "render_seed": 1303944408,
+      "degrade_seed": 776986664
+    },
+    {
+      "pair_index": 98,
+      "pair_id": "pair_098",
+      "architecture_folder": "038",
+      "architecture_script": "generate_folder_038.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 309,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": true,
+      "degradation_models": [
+        "vibration",
+        "poisson"
+      ],
+      "degradation_details": [
+        {
+          "model": "vibration",
+          "dx": 0,
+          "dy": -1
+        },
+        {
+          "model": "poisson",
+          "scale": 4.381
+        }
+      ],
+      "render_seed": 2060924130,
+      "degrade_seed": 188226768
+    },
+    {
+      "pair_index": 99,
+      "pair_id": "pair_099",
+      "architecture_folder": "039",
+      "architecture_script": "generate_folder_039.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 500,
+      "original_gt_x": 500,
+      "original_gt_y": 500,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 735708086,
+      "degrade_seed": 253415745
+    },
+    {
+      "pair_index": 100,
+      "pair_id": "pair_100",
+      "architecture_folder": "040",
+      "architecture_script": "generate_folder_040.py",
+      "cycle": 2,
+      "ground_truth_x": 500,
+      "ground_truth_y": 310,
+      "original_gt_x": 500,
+      "original_gt_y": 310,
+      "degradation_applied": false,
+      "degradation_models": [],
+      "degradation_details": [],
+      "render_seed": 727876280,
+      "degrade_seed": 2065659505
+    }
+  ]
+}

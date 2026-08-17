@@ -1,0 +1,121 @@
+{
+  "dataset": "dataset_most_denser_senthi",
+  "inference_engine": "Drift-Sense v3.0 (Multi-Scale NCC Pyramid)",
+  "accuracy_pct": 100.0,
+  "mean_error_px": 0.0,
+  "mean_inference_s": 0.178,
+  "tolerance_px": 10,
+  "n_pairs": 10,
+  "pairs": [
+    {
+      "pair": "pair_001",
+      "gt_x": 416,
+      "gt_y": 375,
+      "pred_x": 416,
+      "pred_y": 375,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.216,
+      "vis": "pair_001_result.png"
+    },
+    {
+      "pair": "pair_002",
+      "gt_x": 83,
+      "gt_y": 375,
+      "pred_x": 83,
+      "pred_y": 375,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.186,
+      "vis": "pair_002_result.png"
+    },
+    {
+      "pair": "pair_003",
+      "gt_x": 750,
+      "gt_y": 625,
+      "pred_x": 750,
+      "pred_y": 625,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.166,
+      "vis": "pair_003_result.png"
+    },
+    {
+      "pair": "pair_004",
+      "gt_x": 250,
+      "gt_y": 125,
+      "pred_x": 250,
+      "pred_y": 125,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.173,
+      "vis": "pair_004_result.png"
+    },
+    {
+      "pair": "pair_005",
+      "gt_x": 583,
+      "gt_y": 125,
+      "pred_x": 583,
+      "pred_y": 125,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.217,
+      "vis": "pair_005_result.png"
+    },
+    {
+      "pair": "pair_006",
+      "gt_x": 416,
+      "gt_y": 625,
+      "pred_x": 416,
+      "pred_y": 625,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.184,
+      "vis": "pair_006_result.png"
+    },
+    {
+      "pair": "pair_007",
+      "gt_x": 83,
+      "gt_y": 875,
+      "pred_x": 83,
+      "pred_y": 875,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.142,
+      "vis": "pair_007_result.png"
+    },
+    {
+      "pair": "pair_008",
+      "gt_x": 416,
+      "gt_y": 875,
+      "pred_x": 416,
+      "pred_y": 875,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.165,
+      "vis": "pair_008_result.png"
+    },
+    {
+      "pair": "pair_009",
+      "gt_x": 916,
+      "gt_y": 375,
+      "pred_x": 916,
+      "pred_y": 375,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.162,
+      "vis": "pair_009_result.png"
+    },
+    {
+      "pair": "pair_010",
+      "gt_x": 750,
+      "gt_y": 125,
+      "pred_x": 750,
+      "pred_y": 125,
+      "error_px": 0.0,
+      "passed": true,
+      "inf_time": 0.171,
+      "vis": "pair_010_result.png"
+    }
+  ]
+}

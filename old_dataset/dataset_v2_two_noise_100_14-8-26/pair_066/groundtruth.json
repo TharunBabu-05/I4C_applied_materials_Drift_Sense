@@ -1,0 +1,14 @@
+{
+  "center_x": 301,
+  "center_y": 698,
+  "original_gt_x": 300,
+  "original_gt_y": 700,
+  "target_name": "generate_folder_006.py",
+  "pair_id": "pair_066",
+  "scale_factor": 10.0,
+  "degradation_applied": true,
+  "degradation_models": [
+    "vibration",
+    "stage_drift"
+  ]
+}

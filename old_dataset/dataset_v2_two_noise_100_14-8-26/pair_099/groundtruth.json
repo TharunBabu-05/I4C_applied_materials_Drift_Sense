@@ -1,0 +1,11 @@
+{
+  "center_x": 500,
+  "center_y": 500,
+  "original_gt_x": 500,
+  "original_gt_y": 500,
+  "target_name": "generate_folder_039.py",
+  "pair_id": "pair_099",
+  "scale_factor": 10.0,
+  "degradation_applied": false,
+  "degradation_models": []
+}

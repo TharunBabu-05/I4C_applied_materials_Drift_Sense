@@ -1,0 +1,1115 @@
+{
+  "summary": {
+    "total_pairs": 50,
+    "successes": 37,
+    "failures": 13,
+    "accuracy_pct": 74.0,
+    "tolerance_px": 5,
+    "mean_error_px": 35.41,
+    "median_error_px": 0.0,
+    "max_error_px": 252.49,
+    "min_error_px": 0.0,
+    "std_error_px": 68.74,
+    "mean_time_sec": 0.157,
+    "median_time_sec": 0.15,
+    "total_time_sec": 7.86,
+    "difficulty_breakdown": {
+      "easy": {
+        "total": 0,
+        "successes": 0,
+        "accuracy_pct": 0.0
+      },
+      "medium": {
+        "total": 0,
+        "successes": 0,
+        "accuracy_pct": 0.0
+      },
+      "hard": {
+        "total": 50,
+        "successes": 37,
+        "accuracy_pct": 74.0
+      }
+    }
+  },
+  "results": [
+    {
+      "pair": "pair_001",
+      "predicted_x": 516,
+      "predicted_y": 502,
+      "true_x": 516,
+      "true_y": 502,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.146,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25144,
+      "defects": []
+    },
+    {
+      "pair": "pair_002",
+      "predicted_x": 486,
+      "predicted_y": 509,
+      "true_x": 486,
+      "true_y": 509,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.144,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 31471,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 944,
+          "y": 1537,
+          "radius": 9
+        }
+      ]
+    },
+    {
+      "pair": "pair_003",
+      "predicted_x": 518,
+      "predicted_y": 501,
+      "true_x": 518,
+      "true_y": 501,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.15,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25789,
+      "defects": []
+    },
+    {
+      "pair": "pair_004",
+      "predicted_x": 519,
+      "predicted_y": 495,
+      "true_x": 519,
+      "true_y": 495,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.138,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25518,
+      "defects": []
+    },
+    {
+      "pair": "pair_005",
+      "predicted_x": 516,
+      "predicted_y": 490,
+      "true_x": 516,
+      "true_y": 490,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.156,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 27069,
+      "defects": []
+    },
+    {
+      "pair": "pair_006",
+      "predicted_x": 483,
+      "predicted_y": 498,
+      "true_x": 483,
+      "true_y": 498,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.14,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 26785,
+      "defects": []
+    },
+    {
+      "pair": "pair_007",
+      "predicted_x": 486,
+      "predicted_y": 480,
+      "true_x": 486,
+      "true_y": 480,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.172,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 29447,
+      "defects": []
+    },
+    {
+      "pair": "pair_008",
+      "predicted_x": 460,
+      "predicted_y": 254,
+      "true_x": 493,
+      "true_y": 485,
+      "error_px": 233.35,
+      "success": false,
+      "category": "periodic_ambiguity",
+      "explanation": "Error (33.0, 231.0) px aligns with grid pitch (~2 px at 10x). The algorithm landed on an adjacent repeating tile in the DRAM array. This is the core challenge: high periodicity creates visually identical match candidates.",
+      "time_sec": 0.143,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 23549,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 4254,
+          "y": 6045,
+          "radius": 6
+        },
+        {
+          "type": "line_break",
+          "x": 2841,
+          "y": 7733,
+          "length": 12,
+          "orientation": 0
+        }
+      ]
+    },
+    {
+      "pair": "pair_009",
+      "predicted_x": 499,
+      "predicted_y": 490,
+      "true_x": 499,
+      "true_y": 490,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.172,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 28100,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 9831,
+          "y": 807,
+          "radius_x": 8,
+          "radius_y": 7
+        },
+        {
+          "type": "missing_contact",
+          "x": 8010,
+          "y": 7893,
+          "radius": 4
+        },
+        {
+          "type": "particle",
+          "x": 3103,
+          "y": 6767,
+          "radius_x": 3,
+          "radius_y": 2
+        }
+      ]
+    },
+    {
+      "pair": "pair_010",
+      "predicted_x": 517,
+      "predicted_y": 502,
+      "true_x": 517,
+      "true_y": 502,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.208,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 26865,
+      "defects": []
+    },
+    {
+      "pair": "pair_011",
+      "predicted_x": 478,
+      "predicted_y": 488,
+      "true_x": 478,
+      "true_y": 488,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.143,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 23052,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 3007,
+          "y": 1308,
+          "length": 18,
+          "orientation": 0
+        },
+        {
+          "type": "line_bridge",
+          "x": 5822,
+          "y": 3560,
+          "length": 28,
+          "orientation": 0
+        }
+      ]
+    },
+    {
+      "pair": "pair_012",
+      "predicted_x": 488,
+      "predicted_y": 500,
+      "true_x": 488,
+      "true_y": 500,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.156,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 21124,
+      "defects": []
+    },
+    {
+      "pair": "pair_013",
+      "predicted_x": 512,
+      "predicted_y": 517,
+      "true_x": 512,
+      "true_y": 517,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.198,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 31615,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 1036,
+          "y": 6944,
+          "radius": 6
+        },
+        {
+          "type": "line_break",
+          "x": 2097,
+          "y": 9418,
+          "length": 12,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_014",
+      "predicted_x": 496,
+      "predicted_y": 484,
+      "true_x": 496,
+      "true_y": 484,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.161,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 30314,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 2375,
+          "y": 9720,
+          "radius_x": 4,
+          "radius_y": 3
+        }
+      ]
+    },
+    {
+      "pair": "pair_015",
+      "predicted_x": 482,
+      "predicted_y": 375,
+      "true_x": 481,
+      "true_y": 492,
+      "error_px": 117.0,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 117.0 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.138,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 27910,
+      "defects": []
+    },
+    {
+      "pair": "pair_016",
+      "predicted_x": 386,
+      "predicted_y": 510,
+      "true_x": 495,
+      "true_y": 511,
+      "error_px": 109.0,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 109.0 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.289,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 23901,
+      "defects": []
+    },
+    {
+      "pair": "pair_017",
+      "predicted_x": 492,
+      "predicted_y": 498,
+      "true_x": 492,
+      "true_y": 498,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.138,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 24088,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 1287,
+          "y": 3043,
+          "length": 12,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_018",
+      "predicted_x": 595,
+      "predicted_y": 387,
+      "true_x": 478,
+      "true_y": 489,
+      "error_px": 155.22,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 155.2 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.151,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 24267,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 3480,
+          "y": 5143,
+          "length": 8,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_019",
+      "predicted_x": 517,
+      "predicted_y": 480,
+      "true_x": 517,
+      "true_y": 480,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.15,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 31495,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 357,
+          "y": 5485,
+          "radius_x": 4,
+          "radius_y": 3
+        }
+      ]
+    },
+    {
+      "pair": "pair_020",
+      "predicted_x": 479,
+      "predicted_y": 498,
+      "true_x": 479,
+      "true_y": 498,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.132,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25125,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 5278,
+          "y": 7733,
+          "radius_x": 6,
+          "radius_y": 4
+        },
+        {
+          "type": "line_bridge",
+          "x": 3899,
+          "y": 457,
+          "length": 31,
+          "orientation": 0
+        },
+        {
+          "type": "missing_contact",
+          "x": 3984,
+          "y": 6496,
+          "radius": 9
+        }
+      ]
+    },
+    {
+      "pair": "pair_021",
+      "predicted_x": 556,
+      "predicted_y": 495,
+      "true_x": 514,
+      "true_y": 495,
+      "error_px": 42.0,
+      "success": false,
+      "category": "periodic_ambiguity",
+      "explanation": "Error (42.0, 0.0) px aligns with grid pitch (~2 px at 10x). The algorithm landed on an adjacent repeating tile in the DRAM array. This is the core challenge: high periodicity creates visually identical match candidates.",
+      "time_sec": 0.202,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 24451,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 6105,
+          "y": 4673,
+          "radius": 8
+        },
+        {
+          "type": "particle",
+          "x": 8320,
+          "y": 2431,
+          "radius_x": 3,
+          "radius_y": 2
+        }
+      ]
+    },
+    {
+      "pair": "pair_022",
+      "predicted_x": 498,
+      "predicted_y": 518,
+      "true_x": 498,
+      "true_y": 518,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.157,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 22112,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 6858,
+          "y": 6993,
+          "length": 10,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_023",
+      "predicted_x": 640,
+      "predicted_y": 516,
+      "true_x": 479,
+      "true_y": 517,
+      "error_px": 161.0,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 161.0 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.155,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 30254,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 5674,
+          "y": 415,
+          "radius_x": 8,
+          "radius_y": 6
+        },
+        {
+          "type": "line_break",
+          "x": 2470,
+          "y": 8321,
+          "length": 20,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_024",
+      "predicted_x": 503,
+      "predicted_y": 352,
+      "true_x": 513,
+      "true_y": 478,
+      "error_px": 126.4,
+      "success": false,
+      "category": "periodic_ambiguity",
+      "explanation": "Error (10.0, 126.0) px aligns with grid pitch (~2 px at 10x). The algorithm landed on an adjacent repeating tile in the DRAM array. This is the core challenge: high periodicity creates visually identical match candidates.",
+      "time_sec": 0.14,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 32478,
+      "defects": []
+    },
+    {
+      "pair": "pair_025",
+      "predicted_x": 424,
+      "predicted_y": 556,
+      "true_x": 512,
+      "true_y": 491,
+      "error_px": 109.4,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 109.4 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.193,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 30138,
+      "defects": []
+    },
+    {
+      "pair": "pair_026",
+      "predicted_x": 509,
+      "predicted_y": 498,
+      "true_x": 509,
+      "true_y": 498,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.168,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 15254,
+      "defects": []
+    },
+    {
+      "pair": "pair_027",
+      "predicted_x": 480,
+      "predicted_y": 504,
+      "true_x": 480,
+      "true_y": 504,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.155,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 23725,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 8307,
+          "y": 6644,
+          "length": 24,
+          "orientation": 0
+        },
+        {
+          "type": "missing_contact",
+          "x": 6871,
+          "y": 8548,
+          "radius": 5
+        },
+        {
+          "type": "missing_contact",
+          "x": 6610,
+          "y": 3115,
+          "radius": 4
+        }
+      ]
+    },
+    {
+      "pair": "pair_028",
+      "predicted_x": 505,
+      "predicted_y": 509,
+      "true_x": 505,
+      "true_y": 509,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.14,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 27237,
+      "defects": []
+    },
+    {
+      "pair": "pair_029",
+      "predicted_x": 346,
+      "predicted_y": 338,
+      "true_x": 521,
+      "true_y": 520,
+      "error_px": 252.49,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 252.5 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.119,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 21450,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 8525,
+          "y": 6125,
+          "length": 8,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_030",
+      "predicted_x": 511,
+      "predicted_y": 513,
+      "true_x": 511,
+      "true_y": 513,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.124,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 23718,
+      "defects": []
+    },
+    {
+      "pair": "pair_031",
+      "predicted_x": 487,
+      "predicted_y": 493,
+      "true_x": 487,
+      "true_y": 493,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.121,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 33599,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 9257,
+          "y": 8655,
+          "radius": 5
+        }
+      ]
+    },
+    {
+      "pair": "pair_032",
+      "predicted_x": 481,
+      "predicted_y": 497,
+      "true_x": 481,
+      "true_y": 497,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.129,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25234,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 8786,
+          "y": 8669,
+          "length": 24,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_033",
+      "predicted_x": 520,
+      "predicted_y": 481,
+      "true_x": 520,
+      "true_y": 481,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.156,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 28765,
+      "defects": []
+    },
+    {
+      "pair": "pair_034",
+      "predicted_x": 510,
+      "predicted_y": 493,
+      "true_x": 510,
+      "true_y": 493,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.142,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 23753,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 8571,
+          "y": 7412,
+          "radius_x": 5,
+          "radius_y": 3
+        },
+        {
+          "type": "line_break",
+          "x": 2095,
+          "y": 2281,
+          "length": 21,
+          "orientation": 1
+        },
+        {
+          "type": "line_bridge",
+          "x": 9169,
+          "y": 146,
+          "length": 16,
+          "orientation": 0
+        }
+      ]
+    },
+    {
+      "pair": "pair_035",
+      "predicted_x": 521,
+      "predicted_y": 500,
+      "true_x": 521,
+      "true_y": 500,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.15,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 24198,
+      "defects": []
+    },
+    {
+      "pair": "pair_036",
+      "predicted_x": 483,
+      "predicted_y": 591,
+      "true_x": 512,
+      "true_y": 503,
+      "error_px": 92.66,
+      "success": false,
+      "category": "periodic_ambiguity",
+      "explanation": "Error (29.0, 88.0) px aligns with grid pitch (~2 px at 10x). The algorithm landed on an adjacent repeating tile in the DRAM array. This is the core challenge: high periodicity creates visually identical match candidates.",
+      "time_sec": 0.191,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25400,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 3954,
+          "y": 7828,
+          "radius_x": 5,
+          "radius_y": 6
+        }
+      ]
+    },
+    {
+      "pair": "pair_037",
+      "predicted_x": 483,
+      "predicted_y": 512,
+      "true_x": 483,
+      "true_y": 512,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.153,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25284,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 7557,
+          "y": 288,
+          "length": 12,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_038",
+      "predicted_x": 483,
+      "predicted_y": 567,
+      "true_x": 483,
+      "true_y": 509,
+      "error_px": 58.0,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 58.0 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.208,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 21874,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 9040,
+          "y": 9614,
+          "radius": 9
+        },
+        {
+          "type": "missing_contact",
+          "x": 9621,
+          "y": 6279,
+          "radius": 5
+        },
+        {
+          "type": "line_bridge",
+          "x": 3934,
+          "y": 325,
+          "length": 20,
+          "orientation": 1
+        }
+      ]
+    },
+    {
+      "pair": "pair_039",
+      "predicted_x": 487,
+      "predicted_y": 490,
+      "true_x": 487,
+      "true_y": 490,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.154,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 27694,
+      "defects": [
+        {
+          "type": "line_bridge",
+          "x": 3497,
+          "y": 6455,
+          "length": 34,
+          "orientation": 0
+        }
+      ]
+    },
+    {
+      "pair": "pair_040",
+      "predicted_x": 505,
+      "predicted_y": 496,
+      "true_x": 505,
+      "true_y": 496,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.16,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 5649,
+      "defects": []
+    },
+    {
+      "pair": "pair_041",
+      "predicted_x": 508,
+      "predicted_y": 521,
+      "true_x": 508,
+      "true_y": 521,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.14,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 26758,
+      "defects": []
+    },
+    {
+      "pair": "pair_042",
+      "predicted_x": 439,
+      "predicted_y": 490,
+      "true_x": 511,
+      "true_y": 479,
+      "error_px": 72.84,
+      "success": false,
+      "category": "periodic_ambiguity",
+      "explanation": "Error (72.0, 11.0) px aligns with grid pitch (~2 px at 10x). The algorithm landed on an adjacent repeating tile in the DRAM array. This is the core challenge: high periodicity creates visually identical match candidates.",
+      "time_sec": 0.167,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 28832,
+      "defects": []
+    },
+    {
+      "pair": "pair_043",
+      "predicted_x": 495,
+      "predicted_y": 495,
+      "true_x": 495,
+      "true_y": 495,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.127,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 28357,
+      "defects": [
+        {
+          "type": "line_bridge",
+          "x": 3191,
+          "y": 4720,
+          "length": 18,
+          "orientation": 0
+        }
+      ]
+    },
+    {
+      "pair": "pair_044",
+      "predicted_x": 493,
+      "predicted_y": 492,
+      "true_x": 493,
+      "true_y": 492,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.155,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 27856,
+      "defects": [
+        {
+          "type": "line_break",
+          "x": 5231,
+          "y": 8758,
+          "length": 17,
+          "orientation": 0
+        },
+        {
+          "type": "particle",
+          "x": 8617,
+          "y": 2572,
+          "radius_x": 4,
+          "radius_y": 3
+        }
+      ]
+    },
+    {
+      "pair": "pair_045",
+      "predicted_x": 517,
+      "predicted_y": 504,
+      "true_x": 517,
+      "true_y": 504,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.114,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 24789,
+      "defects": []
+    },
+    {
+      "pair": "pair_046",
+      "predicted_x": 482,
+      "predicted_y": 498,
+      "true_x": 482,
+      "true_y": 498,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.117,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 24849,
+      "defects": [
+        {
+          "type": "particle",
+          "x": 829,
+          "y": 2022,
+          "radius_x": 3,
+          "radius_y": 2
+        }
+      ]
+    },
+    {
+      "pair": "pair_047",
+      "predicted_x": 487,
+      "predicted_y": 514,
+      "true_x": 487,
+      "true_y": 514,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.141,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 27959,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 2241,
+          "y": 2175,
+          "radius": 6
+        },
+        {
+          "type": "line_bridge",
+          "x": 6987,
+          "y": 6952,
+          "length": 25,
+          "orientation": 0
+        }
+      ]
+    },
+    {
+      "pair": "pair_048",
+      "predicted_x": 492,
+      "predicted_y": 506,
+      "true_x": 492,
+      "true_y": 506,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.213,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25945,
+      "defects": [
+        {
+          "type": "missing_contact",
+          "x": 7375,
+          "y": 4227,
+          "radius": 8
+        },
+        {
+          "type": "line_break",
+          "x": 9277,
+          "y": 89,
+          "length": 19,
+          "orientation": 0
+        }
+      ]
+    },
+    {
+      "pair": "pair_049",
+      "predicted_x": 754,
+      "predicted_y": 488,
+      "true_x": 513,
+      "true_y": 478,
+      "error_px": 241.21,
+      "success": false,
+      "category": "periodic_ambiguity",
+      "explanation": "Error (241.0, 10.0) px aligns with grid pitch (~2 px at 10x). The algorithm landed on an adjacent repeating tile in the DRAM array. This is the core challenge: high periodicity creates visually identical match candidates.",
+      "time_sec": 0.219,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 20310,
+      "defects": []
+    },
+    {
+      "pair": "pair_050",
+      "predicted_x": 498,
+      "predicted_y": 488,
+      "true_x": 498,
+      "true_y": 488,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.127,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 25283,
+      "defects": []
+    }
+  ]
+}

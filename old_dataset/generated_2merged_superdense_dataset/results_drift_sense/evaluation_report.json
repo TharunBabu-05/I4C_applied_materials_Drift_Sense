@@ -1,0 +1,66 @@
+{
+  "dataset": "generated_2merged_superdense_dataset",
+  "inference_engine": "Drift-Sense v3.0 (Multi-Scale NCC Pyramid)",
+  "accuracy_pct": 0.0,
+  "mean_error_px": 201.05,
+  "mean_inference_s": 0.19,
+  "tolerance_px": 10,
+  "n_pairs": 5,
+  "pairs": [
+    {
+      "pair": "pair_001",
+      "gt_x": 630,
+      "gt_y": 570,
+      "pred_x": 781,
+      "pred_y": 410,
+      "error_px": 220.0,
+      "passed": false,
+      "inf_time": 0.223,
+      "vis": "pair_001_result.png"
+    },
+    {
+      "pair": "pair_002",
+      "gt_x": 570,
+      "gt_y": 440,
+      "pred_x": 201,
+      "pred_y": 450,
+      "error_px": 369.14,
+      "passed": false,
+      "inf_time": 0.2,
+      "vis": "pair_002_result.png"
+    },
+    {
+      "pair": "pair_003",
+      "gt_x": 500,
+      "gt_y": 550,
+      "pred_x": 600,
+      "pred_y": 420,
+      "error_px": 164.01,
+      "passed": false,
+      "inf_time": 0.178,
+      "vis": "pair_003_result.png"
+    },
+    {
+      "pair": "pair_004",
+      "gt_x": 580,
+      "gt_y": 550,
+      "pred_x": 452,
+      "pred_y": 581,
+      "error_px": 131.7,
+      "passed": false,
+      "inf_time": 0.157,
+      "vis": "pair_004_result.png"
+    },
+    {
+      "pair": "pair_005",
+      "gt_x": 420,
+      "gt_y": 450,
+      "pred_x": 540,
+      "pred_y": 440,
+      "error_px": 120.42,
+      "passed": false,
+      "inf_time": 0.19,
+      "vis": "pair_005_result.png"
+    }
+  ]
+}

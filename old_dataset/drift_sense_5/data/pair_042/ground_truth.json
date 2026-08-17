@@ -1,0 +1,16 @@
+{
+  "center_x": 514,
+  "center_y": 485,
+  "ref_crop_x": 4640,
+  "ref_crop_y": 4350,
+  "ref_size": 1000,
+  "scale_factor": 10,
+  "defects": [
+    {
+      "type": "missing_contact",
+      "x": 4940,
+      "y": 4408,
+      "radius": 6
+    }
+  ]
+}

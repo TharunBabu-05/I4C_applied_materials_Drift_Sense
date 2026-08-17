@@ -1,0 +1,78 @@
+{
+  "version": "2.5",
+  "style": "RING",
+  "num_pairs": 5,
+  "seed": 1786177930,
+  "pairs": [
+    {
+      "pair_index": 1,
+      "ground_truth": {
+        "center_x": 432,
+        "center_y": 384,
+        "downsample_factor": 10.0,
+        "unique_notch": {
+          "x": 426,
+          "y": 380,
+          "size": 6
+        }
+      },
+      "generation_time_sec": 0.62
+    },
+    {
+      "pair_index": 2,
+      "ground_truth": {
+        "center_x": 576,
+        "center_y": 480,
+        "downsample_factor": 10.0,
+        "unique_notch": {
+          "x": 570,
+          "y": 476,
+          "size": 6
+        }
+      },
+      "generation_time_sec": 0.63
+    },
+    {
+      "pair_index": 3,
+      "ground_truth": {
+        "center_x": 648,
+        "center_y": 528,
+        "downsample_factor": 10.0,
+        "unique_notch": {
+          "x": 642,
+          "y": 524,
+          "size": 6
+        }
+      },
+      "generation_time_sec": 0.59
+    },
+    {
+      "pair_index": 4,
+      "ground_truth": {
+        "center_x": 456,
+        "center_y": 384,
+        "downsample_factor": 10.0,
+        "unique_notch": {
+          "x": 450,
+          "y": 380,
+          "size": 6
+        }
+      },
+      "generation_time_sec": 0.65
+    },
+    {
+      "pair_index": 5,
+      "ground_truth": {
+        "center_x": 432,
+        "center_y": 408,
+        "downsample_factor": 10.0,
+        "unique_notch": {
+          "x": 426,
+          "y": 404,
+          "size": 6
+        }
+      },
+      "generation_time_sec": 0.59
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "center_x": 432,
+  "center_y": 408,
+  "downsample_factor": 10.0,
+  "unique_notch": {
+    "x": 426,
+    "y": 404,
+    "size": 6
+  }
+}

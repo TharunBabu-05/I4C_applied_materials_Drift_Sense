@@ -1,0 +1,98 @@
+{
+    "pair_id": "dram_10",
+    "architecture": "DRAM",
+    "seed": 20260819,
+    "structure_family": "elongated_recessed_trench_array",
+    "reference": {
+        "filename": "reference_100x.png",
+        "width_px": 1000,
+        "height_px": 1000,
+        "pixel_size_nm": 1,
+        "magnification": "100x"
+    },
+    "search": {
+        "filename": "search_10x.png",
+        "width_px": 1000,
+        "height_px": 1000,
+        "pixel_size_nm": 10,
+        "magnification": "10x"
+    },
+    "target": {
+        "physical_origin_nm": [
+            3760,
+            6180
+        ],
+        "search_box_xywh": [
+            376.7126293310486,
+            618.1274623472003,
+            100.60395820730349,
+            100.53123852070337
+        ],
+        "search_center_xy": [
+            427.01460843470034,
+            668.393081607552
+        ],
+        "landmark_type": "small_asymmetric_T_trench",
+        "landmark_size_nm": [
+            150,
+            170
+        ],
+        "landmark_size_search_px": [
+            15.0,
+            17.0
+        ],
+        "landmark_count": 1
+    },
+    "structure": {
+        "array_block_size_nm": 2400,
+        "separator_width_nm": 360,
+        "trench_pitch_x_nm": 125,
+        "trench_pitch_y_nm": 145,
+        "trench_width_nm": 38,
+        "trench_height_nm": 82,
+        "rail_width_nm": 9,
+        "bridge_width_nm": 8,
+        "row_stagger_nm": 34
+    },
+    "sem_physics": {
+        "reference_beam_spot_nm": 4.0,
+        "search_beam_spot_nm": 6.0,
+        "pattern_collapse_threshold_nm": 10.0,
+        "reference_dose": 2000.0,
+        "search_dose": 200.0,
+        "search_raster_drift_px": 1.25,
+        "search_row_jitter_px": 0.35,
+        "search_astigmatism": 1.06,
+        "search_gamma": 1.06,
+        "search_vignette": 0.09
+    },
+    "noise_model": {
+        "type": "DRAM-10 detector-pattern noise",
+        "reference_readout_sigma": 0.35,
+        "search_readout_sigma": 1.3,
+        "reference_fixed_pattern": 0.25,
+        "search_fixed_pattern": 2.2,
+        "reference_vertical_banding": 0.1,
+        "search_vertical_banding": 2.0,
+        "reference_scan_modulation": 0.1,
+        "search_scan_modulation": 1.8,
+        "reference_grain": 0.008,
+        "search_grain": 0.035,
+        "reference_illumination": 0.5,
+        "search_illumination": 3.0,
+        "search_charging": 2.0,
+        "search_hot_pixel_probability": 0.0007,
+        "search_dead_pixel_probability": 0.0004
+    },
+    "generation": {
+        "same_physical_scene": true,
+        "reference_is_exact_crop": true,
+        "search_is_area_downsampled": true,
+        "physical_scale_ratio": 10
+    },
+    "coordinate_convention": {
+        "origin": "top_left",
+        "x_direction": "right",
+        "y_direction": "down"
+    }
+}

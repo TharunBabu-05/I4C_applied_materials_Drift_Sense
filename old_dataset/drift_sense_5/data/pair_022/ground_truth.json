@@ -1,0 +1,36 @@
+{
+  "center_x": 493,
+  "center_y": 508,
+  "ref_crop_x": 4430,
+  "ref_crop_y": 4580,
+  "ref_size": 1000,
+  "scale_factor": 10,
+  "defects": [
+    {
+      "type": "line_bridge",
+      "x": 7873,
+      "y": 9923,
+      "length": 10,
+      "orientation": 0
+    },
+    {
+      "type": "missing_contact",
+      "x": 9484,
+      "y": 3871,
+      "radius": 8
+    },
+    {
+      "type": "line_break",
+      "x": 9261,
+      "y": 6549,
+      "length": 11,
+      "orientation": 1
+    },
+    {
+      "type": "missing_contact",
+      "x": 2558,
+      "y": 4853,
+      "radius": 7
+    }
+  ]
+}

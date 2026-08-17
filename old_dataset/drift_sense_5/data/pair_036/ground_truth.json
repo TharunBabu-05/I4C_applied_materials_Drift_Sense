@@ -1,0 +1,24 @@
+{
+  "center_x": 486,
+  "center_y": 513,
+  "ref_crop_x": 4360,
+  "ref_crop_y": 4630,
+  "ref_size": 1000,
+  "scale_factor": 10,
+  "defects": [
+    {
+      "type": "line_bridge",
+      "x": 8436,
+      "y": 3547,
+      "length": 14,
+      "orientation": 0
+    },
+    {
+      "type": "line_break",
+      "x": 8362,
+      "y": 3060,
+      "length": 9,
+      "orientation": 0
+    }
+  ]
+}

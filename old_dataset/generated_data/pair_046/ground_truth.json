@@ -1,0 +1,17 @@
+{
+  "center_x": 482,
+  "center_y": 498,
+  "ref_crop_x": 4320,
+  "ref_crop_y": 4480,
+  "ref_size": 1000,
+  "scale_factor": 10,
+  "defects": [
+    {
+      "type": "particle",
+      "x": 829,
+      "y": 2022,
+      "radius_x": 3,
+      "radius_y": 2
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "summary": {
+    "total_pairs": 5,
+    "successes": 3,
+    "failures": 2,
+    "accuracy_pct": 60.0,
+    "tolerance_px": 5,
+    "mean_error_px": 86.13,
+    "median_error_px": 2.0,
+    "max_error_px": 232.96,
+    "min_error_px": 0.0,
+    "std_error_px": 104.59,
+    "mean_time_sec": 0.119,
+    "median_time_sec": 0.104,
+    "total_time_sec": 0.59,
+    "difficulty_breakdown": {
+      "easy": {
+        "total": 0,
+        "successes": 0,
+        "accuracy_pct": 0.0
+      },
+      "medium": {
+        "total": 0,
+        "successes": 0,
+        "accuracy_pct": 0.0
+      },
+      "hard": {
+        "total": 5,
+        "successes": 3,
+        "accuracy_pct": 60.0
+      }
+    }
+  },
+  "results": [
+    {
+      "pair": "pair_001",
+      "predicted_x": 608,
+      "predicted_y": 448,
+      "true_x": 384,
+      "true_y": 512,
+      "error_px": 232.96,
+      "success": false,
+      "category": "noise_induced",
+      "explanation": "Error of 233.0 px doesn't align with grid pitch. Likely caused by noise-induced false correlation peak. The search image's higher noise level created a spurious match.",
+      "time_sec": 0.166,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 784,
+      "defects": []
+    },
+    {
+      "pair": "pair_002",
+      "predicted_x": 418,
+      "predicted_y": 384,
+      "true_x": 416,
+      "true_y": 384,
+      "error_px": 2.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.1,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 784,
+      "defects": []
+    },
+    {
+      "pair": "pair_003",
+      "predicted_x": 448,
+      "predicted_y": 417,
+      "true_x": 480,
+      "true_y": 608,
+      "error_px": 193.66,
+      "success": false,
+      "category": "periodic_ambiguity",
+      "explanation": "Error (32.0, 191.0) px aligns with grid pitch (~2 px at 10x). The algorithm landed on an adjacent repeating tile in the DRAM array. This is the core challenge: high periodicity creates visually identical match candidates.",
+      "time_sec": 0.101,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 784,
+      "defects": []
+    },
+    {
+      "pair": "pair_004",
+      "predicted_x": 544,
+      "predicted_y": 480,
+      "true_x": 544,
+      "true_y": 480,
+      "error_px": 0.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.122,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 785,
+      "defects": []
+    },
+    {
+      "pair": "pair_005",
+      "predicted_x": 546,
+      "predicted_y": 608,
+      "true_x": 544,
+      "true_y": 608,
+      "error_px": 2.0,
+      "success": true,
+      "category": "success",
+      "explanation": "Prediction within tolerance (\u22645 pixels).",
+      "time_sec": 0.104,
+      "difficulty": "hard",
+      "num_ambiguous_peaks": 784,
+      "defects": []
+    }
+  ]
+}
