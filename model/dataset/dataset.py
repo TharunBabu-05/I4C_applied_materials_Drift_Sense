@@ -89,23 +89,10 @@ class DriftSenseSiameseDataset(Dataset):
             
             pos_crop = self._get_crop(search_img, tx, ty, 100)
             
-            # InfoNCE: 30 Negatives (15 local hard negatives, 15 random global decoys)
-            neg_tensors = []
-            for i in range(30):
-                if i < 15:
-                    shift_x = np.random.choice([-15, -10, -5, 5, 10, 15])
-                    shift_y = np.random.choice([-15, -10, -5, 5, 10, 15])
-                else:
-                    shift_x = np.random.randint(-400, 400)
-                    shift_y = np.random.randint(-400, 400)
-                    if abs(shift_x) < 20: shift_x = 25
-                    if abs(shift_y) < 20: shift_y = 25
-                neg_crop = self._get_crop(search_img, tx + shift_x, ty + shift_y, 100)
-                n_t = TF.to_tensor(neg_crop)
-                n_t = n_t / 255.0 if n_t.max() > 1.0 else n_t
-                neg_tensors.append(n_t)
-                
-            neg_tensor = torch.stack(neg_tensors, dim=0)
+            # Hard negative: shifted by 1-3 cells (cell pitch is ~5px at 1000x1000 scale)
+            shift_x = np.random.choice([-15, -10, -5, 5, 10, 15])
+            shift_y = np.random.choice([-15, -10, -5, 5, 10, 15])
+            neg_crop = self._get_crop(search_img, tx + shift_x, ty + shift_y, 100)
             
         elif self.level == 2:
             # Reference downscaled 5x to 200x200
@@ -127,10 +114,7 @@ class DriftSenseSiameseDataset(Dataset):
 
         # Normalize to [0, 1]
         pos_tensor = TF.to_tensor(pos_crop) / 255.0 if pos_crop.max() > 1.0 else TF.to_tensor(pos_crop)
-        
-        if self.level != 1:
-            neg_tensor = TF.to_tensor(neg_crop) / 255.0 if neg_crop.max() > 1.0 else TF.to_tensor(neg_crop)
-            
+        neg_tensor = TF.to_tensor(neg_crop) / 255.0 if neg_crop.max() > 1.0 else TF.to_tensor(neg_crop)
         ref_tensor = ref_tensor / 255.0 if ref_tensor.max() > 1.0 else ref_tensor
 
         # Data Augmentation: Random Flips (Consistent across the triplet)
@@ -144,13 +128,8 @@ class DriftSenseSiameseDataset(Dataset):
                 pos_tensor = TF.vflip(pos_tensor)
                 neg_tensor = TF.vflip(neg_tensor)
 
-        ret = {
+        return {
             'reference': ref_tensor,
-            'positive': pos_tensor
+            'positive': pos_tensor,
+            'negative': neg_tensor
         }
-        if self.level == 1:
-            ret['negatives'] = neg_tensor
-        else:
-            ret['negative'] = neg_tensor
-            
-        return ret
