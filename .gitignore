@@ -32,4 +32,39 @@ venv.bak/
 # OS files
 .DS_Store
 /venv_test
-
+
+
+
+
+
+
+#change later 
+
+/fresh_env
+/model
+/old_dataset
+/ppt
+/trained_models
+/venv_test
+/readme
+
+
+/eval_3models.py
+/evaluate_final.py
+/evaluate_hybrid.py
+/evaluate_pure.py
+/evaluate_yours_inference.py
+/evaluate.py
+/extract_imports.py
+/generate_plots.py
+/inference.py
+/master_inference_gem.py
+/master_inference.py
+/Problem_Statement_02_Applied_Materials_PS2.pptx
+/README (4).md
+/req_test.txt
+/requirements.txt
+/results_manifest.csv
+/submission.txt
+/test_16k_manifest.csv
+/visualize_all_60.py
