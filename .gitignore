@@ -1,4 +1,3 @@
-
 /model/data
 /model/data_new_test
 /model/test_senthil
@@ -9,5 +8,23 @@
 /model/data_16k_v2_final
 /model/data_100_v2_sample
 
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
 
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
+# Checkpoints (Optional, ignoring to save space)
+# *.pth
+# *.pt
+
+# OS files
+.DS_Store
