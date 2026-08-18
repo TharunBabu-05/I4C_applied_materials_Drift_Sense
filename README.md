@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/Drift_Sense_FULL_SVG_Moving_Title.svg" width="100%">
+<img src="assets/drift_sense_animated.svg" width="100%">
 
 
 
