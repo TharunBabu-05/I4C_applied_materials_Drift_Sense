@@ -32,3 +32,6 @@ venv.bak/
 # OS files
 .DS_Store
 /venv_test
+
+
+/final_model/all_60_pairs/
