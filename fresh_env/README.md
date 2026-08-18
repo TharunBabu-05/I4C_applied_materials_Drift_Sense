@@ -4,6 +4,9 @@ This folder contains the minimum required dependencies to reproduce the Siamese 
 
 ## Requirements
 
+**Python Version:** Python 3.10 (Tested on 3.10.12)
+
+
 The provided `requirements.txt` is a cleaned version that specifically pins the external packages actively used in the codebase:
 - `opencv-python`
 - `matplotlib`
