@@ -4,36 +4,24 @@ import json
 import cv2
 import math
 import time
-import torch
 import argparse
 import numpy as np
 import csv
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from model.models.pyramid_siamese import PyramidSiameseNetwork
-
-import importlib.util
-spec_hybrid = importlib.util.spec_from_file_location("inference_hybrid", "model/inference/inference_hybrid.py")
-inference_hybrid = importlib.util.module_from_spec(spec_hybrid)
-spec_hybrid.loader.exec_module(inference_hybrid)
-localize_hybrid = inference_hybrid.localize_hybrid
+# Import the inference functions from master_inference_claude.py
+import master_inference_claude
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data_dir", type=str, default="model/all_60_pairs")
-    parser.add_argument("--checkpoint", type=str, default="final_model/best_model_level1.pth")
-    parser.add_argument("--output_csv", type=str, default="final_model/results_manifest.csv")
+    parser.add_argument("--data_dir", type=str, default="all_60_pairs")
+    parser.add_argument("--checkpoint", type=str, default="best_model_level1.pth")
+    parser.add_argument("--output_csv", type=str, default="results_manifest.csv")
     args = parser.parse_args()
 
     data_dir = args.data_dir
     vis_dir = os.path.join(data_dir, "visualizer")
     os.makedirs(vis_dir, exist_ok=True)
     
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = PyramidSiameseNetwork(encoder_type="resnet").to(device)
-    model.load_state_dict(torch.load(args.checkpoint, map_location=device))
-    model.eval()
-
     pairs = sorted([d for d in os.listdir(data_dir) if os.path.isdir(os.path.join(data_dir, d)) and d != "visualizer"])
     
     print("=========================================================")
@@ -83,7 +71,8 @@ def main():
                 gt_x, gt_y = float(gt.get('center_x', 500)), float(gt.get('center_y', 500))
                 
         t0 = time.time()
-        pred_x, pred_y = localize_hybrid(model, ref, search, device, verbose=False)
+        # Evaluate using Claude's run_hybrid_pipeline implementation
+        pred_x, pred_y = master_inference_claude.run_hybrid_pipeline(ref, search, args.checkpoint, verbose=False)
         t1 = time.time()
         
         inf_time = (t1 - t0) * 1000.0
