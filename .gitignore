@@ -1,3 +1,6 @@
+
+
+/old_dataset
 /model/data
 /model/data_new_test
 /model/test_senthil
@@ -7,7 +10,7 @@
 /extreme_tough_dataset_100
 /model/data_16k_v2_final
 /model/data_100_v2_sample
-
+/model/data_custom_100
 # Python caches
 __pycache__/
 *.py[cod]
@@ -28,3 +31,4 @@ venv.bak/
 
 # OS files
 .DS_Store
+/venv_test
