@@ -78,10 +78,10 @@
     <animateMotion
       dur="4s"
       repeatCount="indefinite"
-      path="M 1182,709
-            L 1492,709
-            L 1767,709
-            L 1182,709"/>
+      path="M 1182,750
+            L 1492,750
+            L 1767,750
+            L 1182,750"/>
   </circle>
 
   <!-- Bright core of moving ball -->
