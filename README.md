@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/Drift_Sence_FULL_SVG_Moving_Title.svg" width="900"/>
-</p>
-
 <div align="center">
   <img src="https://img.shields.io/badge/AI-Siamese%20Network-blue?style=for-the-badge&logo=pytorch" />
   <img src="https://img.shields.io/badge/Architecture-Custom%204--Layer%20ResNet-orange?style=for-the-badge" />
