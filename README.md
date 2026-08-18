@@ -1,4 +1,9 @@
 <div align="center">
+
+<img src="assets/Drift_Sense_FULL_SVG_Moving_Title.svg" width="100%">
+
+</div>
+<div align="center">
   <img src="https://img.shields.io/badge/AI-Siamese%20Network-blue?style=for-the-badge&logo=pytorch" />
   <img src="https://img.shields.io/badge/Architecture-Custom%204--Layer%20ResNet-orange?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Inference-CPU%20Optimized-success?style=for-the-badge" />
