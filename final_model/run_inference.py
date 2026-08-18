@@ -300,8 +300,8 @@ def main():
     parser.add_argument("--search", type=str, help="Path to search image (10x magnification)")
 
     # Model
-    parser.add_argument("--checkpoint", type=str, default=None,
-                        help="Path to .pth checkpoint file")
+    parser.add_argument("--checkpoint", type=str, default="best_model_level1.pth",
+                        help="Path to .pth checkpoint file. Default: best_model_level1.pth")
     parser.add_argument("--encoder", type=str, choices=["resnet", "mobilenet"], default="resnet",
                         help="Encoder backbone: 'resnet' or 'mobilenet'. Default: resnet")
 

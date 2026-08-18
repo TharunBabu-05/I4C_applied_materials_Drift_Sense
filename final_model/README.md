@@ -13,8 +13,9 @@ final_model/
 ├── README.md                            # This file
 ├── requirements.txt                     # Pinned Python dependencies
 ├── run_inference.py                     # Main inference & evaluation script
-├── best_model_level_resnet4_final.pth   # Trained ResNet checkpoint (~1.4MB)
-├── best_model_level_mobilenet_v3.pth    # Trained MobileNetV3 checkpoint (~4.1MB)
+├── best_model_level1.pth                # Primary ResNet checkpoint trained on 16K dataset (~1.4MB)
+├── best_model_level_resnet4_final.pth   # Alternative ResNet checkpoint (~1.4MB)
+├── best_model_level_mobilenet_v3.pth    # MobileNetV3 checkpoint (~4.1MB)
 ├── models/                              # Model architecture definitions
 │   ├── __init__.py
 │   ├── pyramid_siamese.py               # PyramidSiameseNetwork wrapper
