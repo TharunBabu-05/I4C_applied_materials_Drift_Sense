@@ -152,7 +152,7 @@ pip install -r requirements.txt --extra-index-url https://download.pytorch.org/w
 
 ### 2. Single Pair Inference
 ```bash
-python3 master_inference_claude.py --reference all_60_pairs/pair_001/reference.png  --search all_60_pairs/pair_001/search.png 
+python3 master_inference.py --reference all_60_pairs/pair_001/reference.png  --search all_60_pairs/pair_001/search.png 
 ```
 
 ### 3. Benchmark Evaluation
@@ -190,13 +190,7 @@ Full per-pair results are written to `results_manifest.csv`, with visualizations
 
 ## ⚔️ Baseline Comparison: Classical OpenCV vs. Our Hybrid TLM
 
-### Extreme-Noise Benchmark (Synthetic Test Set, 1,600 images, 2.0× noise)
-We injected catastrophic physical degradations (Poisson/Gaussian noise, focal blur) to simulate extreme factory conditions.
 
-| Metric | Baseline (`inference.py`, OpenCV) | Our Hybrid TLM (`_resnet_final_16k_correct_Dataset_TLM`) |
-|---|---|---|
-| Localization Accuracy (≤5px) | 52.6% (842 hits) | **58.0%** (928 hits) |
-| Inference Speed (Pure CPU) | 65.0 ms/image | **33.2 ms/image** |
 
 ### Ideal-Conditions Benchmark (Physical Test Set, 60 images)
 
@@ -276,15 +270,15 @@ If you want to run the pipeline on a single pair of images, use the Master Infer
 
 By default, the script will execute the complete **Hybrid (OpenCV NCC + Siamese AI)** pipeline:
 ```bash
-python master_inference_claude.py --reference img2.png --search img1.png
+python master_inference.py --reference img2.png --search img1.png
 ```
 
 ### Additional Inference Options:
 * **Run Pure Classical Baseline:** If you want to force the pipeline to bypass the AI and execute only the classic 3-Layer OpenCV Pyramid (for ablation testing), add the `--ncc_only` flag:
   ```bash
-  python master_inference_claude.py --reference img2.png --search img1.png --ncc_only
+  python master_inference.py --reference img2.png --search img1.png --ncc_only
   ```
 * **Enable Verbose Output:** Add `--verbose` to see the step-by-step execution times and fusion scores:
   ```bash
-  python master_inference_claude.py --reference img2.png --search img1.png --verbose
+  python master_inference.py --reference img2.png --search img1.png --verbose
   ```
