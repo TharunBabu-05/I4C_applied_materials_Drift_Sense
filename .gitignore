@@ -41,3 +41,9 @@ venv.bak/
 #change later 
 
 /fresh_env
+/phase-2/phase2_generator_60
+/phase-2/phase2_training_16k
+/phase-2/phase2_test_200
+/phase-2/phase2_training_16k_v2
+/phase-2/Senthil_model_test_dataset
+

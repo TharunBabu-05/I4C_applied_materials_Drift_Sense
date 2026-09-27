@@ -9,7 +9,7 @@ import numpy as np
 import csv
 
 # Import the inference functions from master_inference_claude.py
-import master_inference_claude
+import master_inference
 
 def main():
     parser = argparse.ArgumentParser()
@@ -72,7 +72,7 @@ def main():
                 
         t0 = time.time()
         # Evaluate using Claude's run_hybrid_pipeline implementation
-        pred_x, pred_y = master_inference_claude.run_hybrid_pipeline(ref, search, args.checkpoint, verbose=False)
+        pred_x, pred_y = master_inference.run_hybrid_pipeline(ref, search, args.checkpoint, verbose=False)
         t1 = time.time()
         
         inf_time = (t1 - t0) * 1000.0
